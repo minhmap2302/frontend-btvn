@@ -1,0 +1,47 @@
+div{
+    width: 870px;
+    background-color: rgb(234, 232, 232);
+}
+.table{
+    padding-left: 20px;
+    padding-bottom: 20px;
+    width: 850px;
+    border: 0.5px solid white;
+
+}
+.heading{
+    background-color: rgb(86, 86, 244);
+    color: white;
+}
+.mid{
+    text-align: center;
+    font-size: 14px;
+}
+.row2{
+    background-color: white;
+    color: black;
+}
+.row4 {
+    background-color: white;
+    color: black;
+}
+.caption{
+    padding-top: 10px;
+    font-size: large;
+    padding-bottom: 10px;
+}
+.but1{
+    border: none;
+    background-color: rgb(70, 216, 70);
+    color: white;
+}
+.but2{
+    border: none;
+    background-color: rgb(228, 204, 43);
+    color: black;
+}
+.but3{
+    border: none;
+    background-color: rgb(228, 43, 43);
+    color: white;
+}

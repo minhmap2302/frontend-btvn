@@ -1,0 +1,27 @@
+.minh1{
+    background-color: rgb(43, 19, 224);
+    color: white;
+}
+.minh2{
+    background-color: rgb(161, 206, 224);
+    text-align: center;
+}
+.minh3{ 
+    text-align: center;
+}
+.minh4{
+    background-color: rgb(161, 206, 224);
+    text-align: center;
+}
+.tieude{
+    color: black;
+    text-align: center;
+}
+.container{
+    background-color: rgb(215, 228, 233);
+}
+.bang{
+    width: 100%; 
+    margin-left: auto;
+    margin-right: 0;
+}
