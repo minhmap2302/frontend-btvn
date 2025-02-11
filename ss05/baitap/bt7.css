@@ -9,19 +9,19 @@ div{
     border: 0.5px solid white;
 
 }
-.heading{
+.a{
     background-color: rgb(86, 86, 244);
     color: white;
 }
-.mid{
+.b{
     text-align: center;
     font-size: 14px;
 }
-.row2{
+.d{
     background-color: white;
     color: black;
 }
-.row4 {
+.f {
     background-color: white;
     color: black;
 }
@@ -30,17 +30,17 @@ div{
     font-size: large;
     padding-bottom: 10px;
 }
-.but1{
+.b1{
     border: none;
     background-color: rgb(70, 216, 70);
     color: white;
 }
-.but2{
+.b2{
     border: none;
     background-color: rgb(228, 204, 43);
     color: black;
 }
-.but3{
+.b3{
     border: none;
     background-color: rgb(228, 43, 43);
     color: white;
