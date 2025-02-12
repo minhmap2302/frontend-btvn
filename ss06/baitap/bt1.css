@@ -1,0 +1,31 @@
+.a{
+    background-color: rgb(23, 118, 251);
+    color: white;
+    text-align: center;
+    width: 900px;
+    font-size: 20px;
+
+}
+.e{
+    padding-bottom: 20px;
+}
+.b{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+img{
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.c{
+    padding-left: 180px;
+}
+.d{
+    background-color: silver;
+    width: 900px;
+    text-align: center;
+}
+.div2{
+    width: 900px;
+}

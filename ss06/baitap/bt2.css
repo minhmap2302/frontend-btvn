@@ -1,0 +1,24 @@
+.a{
+    background-color: rgb(181, 186, 186);
+    padding-top:10px;
+    width: 220px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+.b{
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+.d{
+    background-color: aqua;
+    color: white;
+    width: 100%;
+    border-radius: 2px;
+}
+.c{
+    
+}
