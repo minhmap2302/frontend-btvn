@@ -1,0 +1,29 @@
+.container{
+    box-sizing: border-box;
+    background-color: rgb(181, 178, 178);
+    line-height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.in1{
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    width: 40%;
+    padding: 10px;
+    border: none;
+}
+.in2{
+    background-color: rgb(186, 189, 192);
+    border-radius: 5px;
+    width: 40%;
+    padding: 10px;
+    border: none;
+}
+img{
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+h1{
+    color: rgb(10, 10, 67);
+}

@@ -1,0 +1,34 @@
+.container{
+    background-color: aliceblue;
+}
+.a{
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    border: 0.5px solid #bdbdbd;
+    border-radius: 10px 10px 0 0;
+}
+.b{
+    background-color: aqua;
+    border-radius: 10px 10px 0 0;
+    border: 0.5px solid #bdbdbd;
+    padding: 15px;
+}
+i{
+    margin-left: 98%;
+    font-size: larger;
+}
+p{
+    display: block;
+}
+.c{
+    border: 0.5px solid #bdbdbd;
+    padding: 15px;
+}
+.d{
+    border-radius: 0 0 10px 10px;
+    border: 0.5px solid #bdbdbd;
+    padding: 15px;
+}
+span{
+    color: rgb(244, 16, 16);
+}

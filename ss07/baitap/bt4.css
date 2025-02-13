@@ -1,0 +1,21 @@
+img{
+    width: 300px;
+}
+.header{
+    border-left: 8px solid orange;
+    padding-left: 10px;
+}
+.container{
+    position: relative;
+}
+p{
+    position:absolute;
+    bottom: 30px;
+    color: white;
+}
+hr {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin: 10px 0;
+  }

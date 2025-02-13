@@ -1,0 +1,22 @@
+
+h2{
+    color: red;
+}
+table{
+    border: 10px;
+    padding: 2px;
+    
+}
+.all{
+    background-color: rgb(167, 167, 167);
+    box-sizing: border-box;
+    margin: 100px;
+    left: 100%;
+}
+.a{
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid;
+    margin-bottom: 100px;
+}

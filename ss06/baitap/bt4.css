@@ -2,7 +2,7 @@
     background-color: greenyellow;
     text-align: center;
 }
-b{
+.head{
     color: white;
     font-size: large;
 }
@@ -20,8 +20,8 @@ img{
     width: 200px;
     background-color: aquamarine;
 }
-p{
+.foot{
     text-align: center;
-    background-color: black;
+    background-color: rgb(10, 10, 10);
     color: white;
 }
