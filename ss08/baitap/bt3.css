@@ -1,0 +1,32 @@
+.head{
+    border-bottom: 2px solid orange;
+    width: 250px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 40px;
+}
+img{
+    width: 80%;
+    margin-left: 40px;
+}
+button{
+    font-size: 15px;
+    background-color: white;
+    height: 50px;
+    width: 100px;
+    border: 3px solid orange;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+.a{
+    border-right: 1px solid grey;
+}
+.body{
+    margin-top: 30px;
+}
+h3{
+    margin-left: 40px;
+}
+p{
+    margin-left: 40px;
+}

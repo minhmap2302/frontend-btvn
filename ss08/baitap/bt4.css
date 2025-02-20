@@ -1,0 +1,36 @@
+
+.head{
+    width: 130px;
+}
+.icon{
+    width: 50px;
+    height: 50px;
+    border: 0.5px solid rgb(113, 111, 111);
+    transform: rotate(45deg);
+    position: relative;
+    margin-left: 10px;
+}
+.icon i{
+    position: absolute;
+    top:20px;
+    left:20px;
+    transform: rotate(-45deg);
+    color: rgb(233, 89, 18);
+}
+h2{
+    border-bottom: 2px solid orangered;
+    width: 130px;
+    margin-left: 30px;
+}
+h3{
+    margin-left: 30px;
+}
+p{
+    color: gray;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+table{
+    width: 70%;
+    margin-left: 70px;
+}

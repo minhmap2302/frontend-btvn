@@ -1,0 +1,25 @@
+.A{
+    text-align: center; 
+}
+.head,.body,.foot{
+    border: 0.2px solid black;
+    width: 20%;
+    text-align: center;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+.minh{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-grow: 1;
+}
+.body{
+    background-color: yellow;
+}
+button{
+    width: 90%;
+}

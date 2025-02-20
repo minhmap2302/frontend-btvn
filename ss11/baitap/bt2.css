@@ -1,0 +1,117 @@
+.container{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.head{
+    background-color:aqua;
+    width: 100%;
+    height: 150px;
+}
+.body{
+    margin-top: 10px;
+}
+.a{
+    width: 49%;
+    background-color: brown;
+    height: 150px;
+    float: right;
+}
+.b{
+    width: 49%;
+    background-color: brown;
+    height: 150px;
+}
+.foot{
+    background-color:aqua;
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+}
+.d{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(170, 169, 169);
+    width: 40%;
+    margin-left: 30px;
+    height: 150px;
+    margin-top: 10px;
+    
+}
+.end{
+    display: flex;
+    align-content: center;
+    width: 100%;
+    }
+.c{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(170, 169, 169);
+    width: 40%;
+    height: 150px;
+    margin-top: 10px;
+    }
+.e{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(170, 169, 169);
+    width: 40%;
+    margin-left: 30px;
+    height: 150px;
+    margin-top: 10px;
+    }
+@media screen and (max-width : 1024px) {
+    .head{
+    background-color:aqua;
+    width: 100%;
+    height: 150px;
+    }
+    .body{
+    margin-top: 10px;
+    }
+    .a{
+    width: 100%;
+    background-color: rgb(189, 3, 206);
+    height: 150px;
+    }
+    .b{
+    width: 100%;
+    background-color: rgb(242, 0, 0);
+    height: 150px;
+    }
+    .foot{
+    background-color:aqua;
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    }
+    
+    .end{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    }
+    .c{
+    background-color: rgb(20, 180, 20);
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    }
+    .d{
+    background-color: rgb(170, 169, 169);
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 0;
+    }
+    .e{
+    background-color: rgb(164, 52, 52);
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 0;
+    }
+}

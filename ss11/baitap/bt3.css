@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+.container {
+    display: grid;
+    gap: 10px;
+    width: 90%;
+    max-width: 1200px;
+}
+@media screen and (min-width: 1024px) {
+    .a {
+        grid-column: span 6;
+        height: 100px;
+        background-color: purple;
+    }
+    .a1, .a2, .a3, .a4 {
+        grid-column: span 3;
+        height: 150px;
+        background-color: rgb(150, 9, 127);
+    }
+    .a5, .a6 {
+        grid-column: span 6;
+        height: 150px;
+        background-color: pink;
+    }
+}
+@media screen and (min-width: 768px) {
+    .a {
+        grid-column: span 3;
+        height: 80px;
+        background-color: purple;
+    }
+    .a1, .a2, .a3, .a4 {
+        grid-column: span 1;
+        height: 120px;
+        background-color: rgb(150, 9, 127);
+    }
+    .a5, .a6 {
+        grid-column: span 3;
+        height: 120px;
+        background-color: pink;
+    }
+}
+@media screen and (max-width: 767px) {
+    .a, a1, .a2, .a3, .a4, .a5, .a6 {
+        grid-column: span 1;
+        height: 100px;
+    }
+    .a {
+        background-color: purple;
+    }
+    .a1, .a2, .a3, .a4 {
+        background-color: rgb(150, 9, 127);
+    }
+    .a5, .a6 {
+        background-color: pink;
+    }
+}

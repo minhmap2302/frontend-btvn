@@ -1,0 +1,23 @@
+.minh{
+    background-color: antiquewhite;
+    position: relative;
+}
+.mb-3{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+button{
+    margin-left: 20px;
+}
+h2{
+    margin-left: 20px;
+    text-align: center;
+}
+.aaa{
+    margin-top: 10px;
+}
+textarea{
+    width: 100%;
+    height: 100px;
+}

@@ -1,0 +1,13 @@
+h2{
+    text-align: center;
+    margin-top: 10px;
+}
+table{
+    border: 1px solid black;
+}
+.a{
+    background-color: #212529;
+}
+.b{
+    background-color: #F2F2F2;
+}

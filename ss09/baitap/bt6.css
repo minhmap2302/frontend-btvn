@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    color: white;
+}
+.Big{
+    height: 70px;
+     display: flex;
+     justify-content: center;
+     width: 50%;
+     background-color:rgb(47, 52, 98) ;
+ }
+.head{
+    
+    margin: 10px 10px 10px 10px;
+    display: flex;
+    gap:10px;
+}
+.foot{
+    margin: 0 10px 10px 10px;
+    display: flex;
+    gap: 10px;
+}
+.Small{
+    flex-wrap: wrap;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    justify-content: space-between;
+    height: 10%;
+    
+}
+.small{
+    height: 30px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    width: 48%;
+    background-color: rgb(47, 52, 98);
+}

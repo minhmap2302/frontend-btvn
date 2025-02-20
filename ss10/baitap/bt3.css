@@ -1,0 +1,35 @@
+.a{
+    width: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+.b{
+    width: 40px;
+    border-radius: 400px;
+}
+span{
+    text-align: center;
+    margin-left: 10px;
+    vertical-align: middle;
+
+}
+p{
+    color: rgb(146, 145, 145);
+}
+.container{
+    background-color: rgb(244, 242, 242);
+    width: 27%;
+}
+.h1{
+    display: flex;
+    align-items: center;
+}
+button{
+    position: absolute;
+    border-radius: 5px;
+    left: 320px;
+    top: 15px;
+    border: 1px solid rgb(255, 255, 255);
+    height: 30px;
+    background-color: rgb(221, 52, 52);
+}

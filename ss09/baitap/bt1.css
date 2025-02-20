@@ -1,0 +1,24 @@
+.head{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    justify-self: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: beige;
+    justify-content: center;
+}
+.container{
+    background-color: aliceblue;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+p{
+    color: aliceblue;
+}

@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    color: white;
+}
+.head1{
+    display: flex;    
+}
+.body{
+    justify-content: space-between;
+    display: flex;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 30, 0);
+    width: 30%;
+    height: 50px;
+    border-radius: 4px;
+    margin: 10px 10px 0 10px;
+}
+.b1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 15.5%;
+    height: 50px;
+    border-radius: 4px;
+    color: white;
+    background-color: rgb(255, 0, 0);
+}
+

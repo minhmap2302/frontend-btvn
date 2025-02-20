@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.container{
+    color: #fff;
+}
+.container .header{
+    background-color: violet;
+    margin-bottom: 5px;
+}
+.container .main{
+    display: flex ;
+    gap: 5px;
+}
+.main .sidebar{
+    flex: 1;
+    background-color: red;
+    height: 200px;
+}
+.main .content{
+    flex: 3;
+    background-color: green;
+    height: 200px;
+}
+.container .footer{
+    margin-top: 5px;
+    background-color: rgb(35, 175, 251);
+}

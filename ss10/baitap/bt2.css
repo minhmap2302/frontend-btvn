@@ -1,0 +1,28 @@
+img{
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    display: flex;
+}
+.ball{
+    font-family: "Sigmar", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(172, 167, 167);
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.container{
+    background-color: rgb(226, 223, 223);
+    display: flex;
+    text-align: center;
+    width: 60%;
+    height: 230px;
+}
+.a{
+    
+}
