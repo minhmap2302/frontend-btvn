@@ -1,0 +1,64 @@
+.minh{
+    display: flex;
+    flex-direction: row;
+}
+.a{
+    margin-left: 50px;
+    border-radius: 20px;
+    height: 250px;
+}
+.b{
+    position: absolute;
+    height: 20px;
+    top: 200px;
+    left: 100px;
+    border-radius: 10px;
+}
+.head{
+    position: relative;
+}
+.body{
+    position: relative;
+}
+.foot{
+    position: relative;
+}
+h3{
+    position:absolute;
+    height: 20px;
+    top: 150px;
+    left: 100px;
+    color: white;
+}
+p{
+    position: absolute;
+    height: 20px;
+    top: 200px;
+    left: 350px;
+    color: white;
+    font-size: 12px;
+}
+i{
+    position: absolute;
+    top: 200px;
+    left: 310px;
+    height: 20px;
+    font-size: 24px;
+    color: white;
+}
+.aa{
+    position: absolute;
+    top: 200px;
+    left: 400px;
+    height: 20px;
+    font-size: 24px;
+    color: white;
+}
+.c{
+    position: absolute;
+    top: 195px;
+    left: 430px;
+    height: 20px;
+    font-size: 24px;
+    color: white;
+}
