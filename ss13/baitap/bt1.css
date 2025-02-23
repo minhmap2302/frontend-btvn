@@ -1,0 +1,853 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+
+    width: 1440px;
+}
+
+.header {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    background-color: black;
+    color: #FAFAFA;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.header .header01 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 12px;
+    left: 445px;
+    right: 231px;
+}
+
+.header .sologan {
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 859px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+}
+
+.header .text {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 550px;
+    height: 24px;
+    font-family: "Poppins", serif;
+
+}
+
+.header span {
+    line-height: 21px;
+    font-weight: 600;
+    font-family: "Poppins", serif;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.header .language {
+    width: 78px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: "Poppins", serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+}
+
+.dock {
+    width: 100%;
+    height: 94px;
+    position: relative;
+    border-bottom: 1px solid gray;
+}
+
+.dock .content {
+    width: 1170px;
+    height: 38px;
+    position: absolute;
+    top: 40px;
+    left: 135px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+}
+
+.dock .content .content1 {
+    width: 645px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 160px;
+
+
+}
+
+.dock .content .content1 .title {
+    width: 118px;
+    height: 24px;
+    font-family: "Inter", serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 3%;
+}
+
+.dock .content .content1 a {
+    text-decoration: none;
+    color: black;
+    height: 24px;
+    font-family: "Poppins", serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    align-items: center;
+    font-size: 16px;
+}
+
+.dock .content .content1 .link .a1 {
+    width: 48px;
+}
+
+.dock .content .content1 .link .a2 {
+    width: 66px;
+}
+
+.dock .content .content1 .link .a3 {
+    width: 48px;
+}
+
+.dock .content .content1 .link .a4 {
+    width: 61px;
+}
+
+.dock .content .content1 .link {
+    width: 367px;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+}
+
+.dock .content .content2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+}
+
+.dock .content .content2 .search {
+    width: 243px;
+    height: 38px;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 12px 7px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+}
+
+.dock .content .content2 .search .text {
+    width: 221px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+}
+
+.dock .content .content2 .search .text span {
+    font-family: "Poppins", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #0000005b;
+}
+
+.dock .content .content2 .icon {
+    width: 128px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.dock .content .content2 .icon i {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.mid {
+
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+    font-style: normal;
+    width: 100%;
+    height: 951px;
+    position: relative;
+}
+
+.mid .text1 {
+    position: absolute;
+    top: 80px;
+    left: 135px;
+    width: 155px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 400;
+
+
+}
+
+.mid .text1 span {
+    color: rgba(0, 0, 0, 0.687);
+}
+
+.mid .text2 {
+    position: absolute;
+    top: 80px;
+    left: 1166px;
+    width: 155px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+.mid .text2 span {
+    color: #DB4444;
+}
+
+.mid .title1 {
+    width: 166px;
+    height: 24px;
+    position: absolute;
+    top: 181px;
+    left: 135px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.mid .title2 {
+    width: 82px;
+    height: 24px;
+    position: absolute;
+    top: 333px;
+    left: 135px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.mid .title3 {
+    width: 93px;
+    height: 23px;
+    position: absolute;
+    top: 445px;
+    left: 135px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.mid .content1 {
+    width: 165px;
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    position: absolute;
+    top: 221px;
+    left: 170px;
+}
+
+.mid .content1 .item1 {
+    color: #DB4444;
+    font-weight: 400;
+    font-style: 16px;
+    line-height: 24px;
+}
+
+.mid .content1 .item2 {
+    font-weight: 400;
+    font-style: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.349);
+}
+
+.mid .content1 .item3 {
+    font-weight: 400;
+    font-style: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.349);
+}
+
+.mid .content2 {
+    width: 138px;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 373px;
+    left: 170px;
+}
+
+.mid .content2 .item {
+    font-weight: 400;
+    font-style: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.349);
+}
+
+.mid .mainContent {
+    font-family: "Poppins", serif;
+    font-style: normal;
+    width: 870px;
+    height: 630px;
+    position: absolute;
+    top: 181px;
+    left: 435px;
+    box-shadow: 0px 1px 13px 0px #000000;
+    border: none;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.mid .mainContent .title {
+    width: 155px;
+    height: 28px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    color: #DB4444;
+
+}
+
+.mid .mainContent .input1 {
+    width: 710px;
+    height: 82px;
+    position: absolute;
+    top: 84px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+
+}
+
+.mid .mainContent .input1 .item {
+    width: 330px;
+    height: 82px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mid .mainContent .input1 .item label {
+    width: 85px;
+    height: 24px;
+    font-style: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.mid .mainContent .input1 .item input {
+    width: 330px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    position: relative;
+}
+
+.mid .mainContent .input1 .item ::placeholder {
+    width: 25px;
+    height: 24px;
+    position: absolute;
+    top: 15px;
+    left: 13px;
+    opacity: 50%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.mid .mainContent .input1 .item1 ::placeholder {
+    width: 45px;
+    height: 24px;
+    position: absolute;
+
+    left: 16px;
+    opacity: 50%;
+}
+
+.mid .mainContent .input2 {
+    width: 710px;
+    height: 82px;
+    position: absolute;
+    top: 190px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+
+}
+
+.mid .mainContent .input2 .item {
+    width: 330px;
+    height: 82px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mid .mainContent .input2 .item label {
+    width: 85px;
+    height: 24px;
+    font-style: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.mid .mainContent .input2 .item input {
+    width: 330px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    position: relative;
+}
+
+.mid .mainContent .input2 .item1 ::placeholder {
+    width: 163px;
+    height: 24px;
+    position: absolute;
+    top: 15px;
+    left: 13px;
+    opacity: 50%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.mid .mainContent .input2 .item2 ::placeholder {
+    width: 221px;
+    height: 24px;
+    position: absolute;
+    top: 15px;
+    left: 13px;
+    opacity: 50%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.mid .mainContent .input3 {
+    width: 710px;
+    height: 214px;
+    position: absolute;
+    top: 296px;
+    left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+}
+
+.mid .mainContent .input3 .item1 {
+    width: 710px;
+    height: 82px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+}
+
+.mid .mainContent .input3 .item1 label {
+    width: 154px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.mid .mainContent .input3 .item1 input {
+    width: 710px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.mid .mainContent .input3 .item1 ::placeholder {
+    width: 136px;
+    height: 24px;
+    position: absolute;
+    top: 15px;
+    left: 13px;
+    opacity: 50%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.mid .mainContent .input3 .item2 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mid .mainContent .input3 .item2 input {
+    width: 710px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.mid .mainContent .input3 .item2 ::placeholder {
+    width: 136px;
+    height: 24px;
+    position: absolute;
+    top: 15px;
+    left: 13px;
+    opacity: 50%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.mid .mainContent .input4 {
+    width: 303px;
+    height: 56px;
+    position: absolute;
+    top: 534px;
+    left: 487px;
+    display: flex;
+    gap: 32px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.mid .mainContent .input4 button {
+    width: 214px;
+    height: 56px;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 48px 16px 48px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: white;
+    background-color: #DB4444;
+}
+
+.footer {
+    width: 1440px;
+    height: 440px;
+    background: #000000;
+    color: white;
+    position: relative;
+}
+
+.footer .introduction {
+    width: 1170px;
+    height: 236px;
+    font-family: "Poppins", serif;
+    font-style: normal;
+    position: absolute;
+    top: 80px;
+    left: 135px;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 87px;
+}
+
+.footer .introduction .introItem1 {
+    width: 217px;
+    height: 188px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer .introduction .introItem1 .input {
+    position: relative;
+}
+
+.footer .introduction .introItem1 .input input {
+    width: 217px;
+    height: 48px;
+    border: 1.5px solid #FAFAFA;
+    border-radius: 4px;
+    padding: 12px 12px 16px 32px;
+    position: relative;
+    background-color: #000000;
+}
+
+.footer .introduction .introItem1 .input ::placeholder {
+    font-family: "Poppins", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+}
+
+.footer .introduction .introItem1 .input i {
+    position: absolute;
+    color: #ffffff;
+    top: 15px;
+    right: 20px;
+
+}
+
+.footer .introduction .introItem1 .div1 {
+    width: 206px;
+    height: 124px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    gap: 24px;
+}
+
+.footer .introduction .introItem1 .div1 .div2 {
+    width: 118px;
+    height: 76px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    gap: 24px;
+}
+
+.footer .introduction .introItem1 .div1 .div2 .text1 {
+    font-family: "Inter", serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 3%;
+}
+
+.footer .introduction .introItem1 .div1 .div2 .text2 {
+    font-family: "Poppins", serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+
+}
+
+.footer .introduction .introItem1 .div1 p {
+    font-family: "Poppins", serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.footer .introduction .introItem2 {
+    width: 175px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+
+}
+
+.footer .introduction .introItem2 .item1 {
+    width: 81px;
+    height: 28px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+
+}
+
+.footer .introduction .introItem2 .item2 {
+    width: 175px;
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer .introduction .introItem2 .item2 .smallItem1 {
+    width: 175px;
+    height: 48px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.footer .introduction .introItem3 {
+    width: 123px;
+    height: 236px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+
+}
+
+.footer .introduction .introItem3 .item1 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.footer .introduction .introItem3 .item2 {
+    width: 123px;
+    height: 184px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer .introduction .introItem3 .item2 .item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.footer .introduction .introItem3 {
+    width: 123px;
+    height: 236px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+
+}
+
+.footer .introduction .introItem4 .item1 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.footer .introduction .introItem4 .item2 {
+    width: 123px;
+    height: 184px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer .introduction .introItem4 .item2 .item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+.footer .introduction .introItem5{
+    width: 198px;
+    height: 162px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+}
+.footer .introduction .introItem5 .item1{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+.footer .introduction .introItem5 .item2{
+    width: 198px;
+    height: 110px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+}
+.footer .introduction .introItem5 .item2 .smallItem1{
+    width: 80px;height: 80px;
+}
+.footer .introduction .introItem5 .item2 .smallItem1 img{
+    width: 100%;
+    height: 100%;
+
+}
+.footer .introduction .introItem5 .item2 .smallItem2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+ 
+
+}
+.footer .introduction .introItem5 .item2 .smallItem2 .img{
+    width: 104px;height:30px;
+   
+}
+.footer .introduction .introItem5 .item2 .smallItem2 .img img{
+    width: 100%;
+    height: 100%;
+}
