@@ -1,0 +1,958 @@
+
+.header {
+    width: 100%;
+    height: 68px;
+    padding-top: 16px;
+    padding-right: 10px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+}
+
+.header .father {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 36px;
+    justify-content: space-between;
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-bottom: 10px;
+    background-color: white;
+}
+
+.header .father span {
+    width: 100%;
+    height: 36px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -2%;
+}
+
+.header .father .son {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+}
+
+.header .father .son a {
+    text-decoration: none;
+    color: black;
+}
+
+.header .father .son div {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+}
+
+
+.header .father .son button {
+    background-color: black;
+    color: white;
+    width: 136px;
+    height: 36px;
+    border-radius: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 5px;
+}
+
+button{
+    margin-right: 100px;
+}
+
+
+/* -----body1 */
+
+.body1 {
+    width: 100%;
+    height: 552px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 96px;
+    padding-right: 80px;
+    padding-bottom: 96px;
+    padding-left: 80px;
+
+}
+
+.body1 .grandfather {
+    width: 100%;
+    height: 350px;
+    padding-right: 32px;
+    padding-left: 32px;
+    gap: 48px;
+
+}
+
+
+.body1 .father {
+    width: 100%;
+    height: 360px;
+    max-width: 768px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+}
+
+.body1 .father .text3 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.body1 .father .icon {
+    width: 8px;
+    height: 8px;
+    border-radius: 20px;
+    background: #10B981;
+}
+
+.body1 .father .son {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    padding: 6px;
+
+}
+
+.body1 .mother {
+    width: 100%;
+    height: 360px;
+    min-width: 384px;
+}
+
+.body1 .mother img {
+    width: 280px;
+    height: 320px;
+    border-width: 8px;
+    left: 80px;
+
+}
+
+
+/* ---------body2------------ */
+.body2 {
+    width: 100%;
+    height: 412px;
+    padding-top: 96px;
+    padding-right: 80px;
+    padding-bottom: 96px;
+    padding-left: 80px;
+    /* background-color: #10B981; */
+
+}
+
+.body2 .grandfather {
+    width: 100%;
+    height: 220px;
+    padding-right: 32px;
+    padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+}
+
+.body2 .father {
+    width: 100%;
+    height: 72px;
+    gap: 16px;
+
+}
+
+.body2 .father .text1 {
+    width: 100%;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.body2 .father .text1 span {
+    width: 75px;
+    height: 28px;
+    padding-top: 4px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    border-radius: 12px;
+    background: var(--Gray-200, #E5E7EB);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.body2 .father .text2 {
+    width: 100%;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.body2 .mother {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.body2 .mother img {
+    width: 64px;
+    height: 64px;
+
+}
+
+/* ---------body3---------- */
+.body3 {
+    width: 100%;
+    height: 1320px;
+    padding-top: 96px;
+    padding-right: 80px;
+    padding-bottom: 96px;
+    padding-left: 80px;
+}
+
+.body3 .grandfather {
+    width: 100%;
+    height: 1128px;
+    padding-right: 32px;
+    padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+}
+
+.body3 .father {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.body3 .father .text1 {
+    width: 100%;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.body3 .father .text1 span {
+    width: 75px;
+    height: 28px;
+    padding-top: 4px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    border-radius: 12px;
+    background: var(--Gray-200, #E5E7EB);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 2%;
+
+}
+
+.body3 .father .text2 {
+    width: 100%;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.body3 .mother1 {
+    width: 100%;
+    height: 480px;
+    border-radius: 12px;
+    display: flex;
+
+}
+
+.body3 .mother1 .son1 {
+    width: 576px;
+    height: 430px;
+    border-right-width: 1px;
+    padding: 48px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: rgb(243, 242, 242);
+
+}
+
+.body3 .mother1 .son1 img {
+    width: 480px;
+    height: 384px;
+    border-radius: 12px;
+
+}
+
+.body3 .mother1 .son2 {
+    width: 576px;
+    height: 480px;
+    /* gap: 24px; */
+    padding: 48px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+}
+
+.body3 .mother1 .son2 h2 {
+    width: 480px;
+    height: 28px;
+
+}
+
+.body3 .mother1 .son2 p {
+    width: 480px;
+    height: 96px;
+
+}
+
+.body3 .mother1 .son2 span {
+    width: 79px;
+    height: 28px;
+    padding-top: 4px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    border-radius: 12px;
+    background: var(--Gray-200, #E5E7EB);
+}
+
+.body3 .mother1 .son2 .btn {
+    width: 480px;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+}
+
+.body3 .mother1 .son2 h5 {
+    width: 480px;
+    height: 36px;
+
+}
+
+/* -mother2- */
+.body3 .mother2 {
+    width: 100%;
+    height: 480px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+
+.body3 .mother2 .son1 {
+    width: 576px;
+    height: 430px;
+    border-left-width: 1px;
+    padding: 48px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: rgb(243, 242, 242);
+
+}
+
+.body3 .mother2 .son1 img {
+    width: 480px;
+    height: 384px;
+    border-radius: 12px;
+
+}
+
+.body3 .mother2 .son2 {
+    width: 576px;
+    height: 480px;
+    padding: 48px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+}
+
+.body3 .mother2 .son2 h2 {
+    width: 480px;
+    height: 28px;
+
+}
+
+.body3 .mother2 .son2 p {
+    width: 480px;
+    height: 96px;
+
+}
+
+.body3 .mother2 .son2 span {
+    width: 79px;
+    height: 28px;
+    padding-top: 4px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+    border-radius: 12px;
+    background: var(--Gray-200, #E5E7EB);
+}
+
+.body3 .mother2 .son2 .btn {
+    width: 480px;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+}
+
+.body3 .mother2 .son2 h5 {
+    width: 480px;
+    height: 36px;
+
+}
+
+/* -----footer----- */
+.footer {
+    width: 100%;
+    height: 68px;
+    padding-top: 24px;
+    padding-right: 80px;
+    padding-bottom: 24px;
+    padding-left: 80px;
+
+}
+
+.footer .text {
+    width: 100%;
+    height: 20px;
+    padding-right: 32px;
+    padding-left: 32px;
+
+}
+.footer .text span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a {
+    color: black;
+}
+
+.footer a:hover {
+    background-color: rgb(8, 181, 255);
+}
+
+
+/* --------------------------mobile--------------------------------- */
+/* ----------------------------------------------------------------- */
+
+
+@media screen and (max-width:375px){
+    .header {
+        width: 100%;
+        height: 68px;
+        justify-content: space-between;
+        padding-top: 16px;
+        padding-right: 80px;
+        padding-bottom: 16px;
+        padding-left: 16px;
+    }
+    
+    .header .father {
+        display: flex;
+        flex-direction: column;
+        width: 1280px;
+        height: 36px;
+        justify-content: space-between;
+        padding-right: 32px;
+        padding-left: 32px;
+        padding-bottom: 10px;
+        background-color: white;
+    }
+    
+    .header .father span {
+        width: 96px;
+        height: 36px;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: -2%;
+    }
+    
+    .header .father .son {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+    
+    .header .father .son a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .header .father .son div {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        padding: 6px;
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    .header .father .son button {
+        background-color: black;
+        color: white;
+        width: 136px;
+        height: 36px;
+        border-radius: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 5px;
+    }
+    
+    
+    /* -----body1 */
+    
+    .body1 {
+        width: 100%;
+        height: 552px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 96px;
+        padding-right: 80px;
+        padding-bottom: 96px;
+        padding-left: 80px;
+    
+    }
+    
+    .body1 .grandfather {
+        width: 100%;
+        height: 350px;
+        padding-right: 32px;
+        padding-left: 32px;
+        gap: 48px;
+    
+    }
+    
+    
+    .body1 .father {
+        width: 768px;
+        height: 360px;
+        max-width: 768px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    
+    }
+    
+    .body1 .father .text3 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .body1 .father .icon {
+        width: 8px;
+        height: 8px;
+        border-radius: 20px;
+        background: #10B981;
+    }
+    
+    .body1 .father .son {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        padding: 6px;
+    
+    }
+    
+    .body1 .mother {
+        width: 400px;
+        height: 360px;
+        min-width: 384px;
+    
+    }
+    
+    .body1 .mother img {
+        width: 280px;
+        height: 320px;
+        border-width: 8px;
+        left: 80px;
+    
+    }
+    
+    
+    /* ---------body2------------ */
+    .body2 {
+        width: 100%;
+        height: 412px;
+        padding-top: 96px;
+        padding-right: 80px;
+        padding-bottom: 96px;
+        padding-left: 80px;
+        /* background-color: #10B981; */
+    
+    }
+    
+    .body2 .grandfather {
+        width: 1280px;
+        height: 220px;
+        padding-right: 32px;
+        padding-left: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    
+    }
+    
+    .body2 .father {
+        width: 1216px;
+        height: 72px;
+        gap: 16px;
+    
+    }
+    
+    .body2 .father .text1 {
+        width: 1216px;
+        height: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .body2 .father .text1 span {
+        width: 75px;
+        height: 28px;
+        padding-top: 4px;
+        padding-right: 20px;
+        padding-bottom: 4px;
+        padding-left: 20px;
+        border-radius: 12px;
+        background: var(--Gray-200, #E5E7EB);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .body2 .father .text2 {
+        width: 1216px;
+        height: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    .body2 .mother {
+        width: 1216px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+    }
+    
+    .body2 .mother img {
+        width: 64px;
+        height: 64px;
+    
+    }
+    
+    /* ---------body3---------- */
+    .body3 {
+        width: 100%;
+        height: 1320px;
+        padding-top: 96px;
+        padding-right: 80px;
+        padding-bottom: 96px;
+        padding-left: 80px;
+        
+    }
+    
+    .body3 .grandfather {
+        width: 1280px;
+        height: 1128px;
+        padding-right: 32px;
+        padding-left: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+    
+    }
+    
+    .body3 .father {
+        width: 1216px;
+        height: 72px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    
+    }
+    
+    .body3 .father .text1 {
+        width: 100%;
+        height: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .body3 .father .text1 span {
+        width: 75px;
+        height: 28px;
+        padding-top: 4px;
+        padding-right: 20px;
+        padding-bottom: 4px;
+        padding-left: 20px;
+        border-radius: 12px;
+        background: var(--Gray-200, #E5E7EB);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 2%;
+    
+    }
+    
+    .body3 .father .text2 {
+        width: 100%;
+        height: 28px;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    .body3 .mother1 {
+        width: 100%;
+        height: 480px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .body3 .mother1 .son1 {
+        width: 576px;
+        height: 430px;
+        border-right-width: 1px;
+        padding: 48px;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        background-color: rgb(243, 242, 242);
+    
+    }
+    
+    .body3 .mother1 .son1 img {
+        width: 480px;
+        height: 384px;
+        border-radius: 12px;
+    
+    }
+    
+    .body3 .mother1 .son2 {
+        width: 576px;
+        height: 480px;
+        /* gap: 24px; */
+        padding: 48px;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    
+    }
+    
+    .body3 .mother1 .son2 h2 {
+        width: 480px;
+        height: 28px;
+    
+    }
+    
+    .body3 .mother1 .son2 p {
+        width: 480px;
+        height: 96px;
+    
+    }
+    
+    .body3 .mother1 .son2 span {
+        width: 79px;
+        height: 28px;
+        padding-top: 4px;
+        padding-right: 20px;
+        padding-bottom: 4px;
+        padding-left: 20px;
+        border-radius: 12px;
+        background: var(--Gray-200, #E5E7EB);
+    }
+    
+    .body3 .mother1 .son2 .btn {
+        width: 480px;
+        height: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    
+    }
+    
+    .body3 .mother1 .son2 h5 {
+        width: 480px;
+        height: 36px;
+    
+    }
+    
+    /* -mother2- */
+    .body3 .mother2 {
+        width: 100%;
+        height: 480px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    
+    }
+    
+    .body3 .mother2 .son1 {
+        width: 576px;
+        height: 430px;
+        border-left-width: 1px;
+        padding: 48px;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        background-color: rgb(243, 242, 242);
+    
+    }
+    
+    .body3 .mother2 .son1 img {
+        width: 480px;
+        height: 384px;
+        border-radius: 12px;
+    
+    }
+    
+    .body3 .mother2 .son2 {
+        width: 576px;
+        height: 480px;
+        padding: 48px;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    
+    }
+    
+    .body3 .mother2 .son2 h2 {
+        width: 480px;
+        height: 28px;
+    
+    }
+    
+    .body3 .mother2 .son2 p {
+        width: 480px;
+        height: 96px;
+    
+    }
+    
+    .body3 .mother2 .son2 span {
+        width: 79px;
+        height: 28px;
+        padding-top: 4px;
+        padding-right: 20px;
+        padding-bottom: 4px;
+        padding-left: 20px;
+        border-radius: 12px;
+        background: var(--Gray-200, #E5E7EB);
+    }
+    
+    .body3 .mother2 .son2 .btn {
+        width: 480px;
+        height: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    
+    }
+    
+    .body3 .mother2 .son2 h5 {
+        width: 480px;
+        height: 36px;
+    }
+    
+    /* -----footer----- */
+    .footer {
+        width: 100%;
+        height: 68px;
+        padding-top: 24px;
+        padding-right: 80px;
+        padding-bottom: 24px;
+        padding-left: 80px;
+    
+    }
+    
+    .footer .text {
+        width: 100%;
+        height: 20px;
+        padding-right: 32px;
+        padding-left: 32px;
+    
+    }
+    .footer .text span{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footer a {
+        color: black;
+    }
+    
+    .footer a:hover {
+        background-color: rgb(8, 181, 255);
+    }
+}
+
+
