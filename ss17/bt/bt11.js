@@ -1,0 +1,12 @@
+document.write(Math.abs(-5), "<br>");
+document.write(Math.abs(10), "<br>");
+document.write("Nếu truyền giá trị âm thì sẽ lấy giá trị tuyệt đối của số đó", "<br>");
+document.write(Math.ceil(4.4), "<br>");
+document.write(Math.ceil(5.8), "<br>");
+document.write("Làm tròn số lên", "<br>");
+document.write(Math.floor(5.7), "<br>");
+document.write(Math.floor(6.1), "<br>");
+document.write("Làm tròn số xuống", "<br>");
+document.write(Math.round(10.1), "<br>");
+document.write(Math.round(20.6), "<br>");
+document.write("Làm tròn số", "<br>");

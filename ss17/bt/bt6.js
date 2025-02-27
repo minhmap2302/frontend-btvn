@@ -1,0 +1,12 @@
+let num = "5";
+let num2 = "-1";
+let num3 = "Hello";
+number1 = Number(num);
+number2 = Number(num2);
+number3 = Number(num3);
+let str = "55";
+let str2 = "-10";
+let str3 = "0";
+string = String(str);
+string2 = String(str2);
+string3 = String(str3);
