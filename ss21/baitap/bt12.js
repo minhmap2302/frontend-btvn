@@ -8,3 +8,4 @@ console.log("%cMINH", "color:brown;");
 console.log("%cMINH", "color:pink;");
 console.log("%cMINH", "color:violet;");
 console.log("%cMINH", "color:black;");
+Array

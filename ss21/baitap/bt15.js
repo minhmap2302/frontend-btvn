@@ -5,6 +5,9 @@ let mottram = 0;
 let namchuc = 0;
 let haimuoi = 0;
 let muoi = 0;
+let nam = 0;
+let hai = 0;
+let mot = 0;
 if (money % 1000 != 0) {
     document.write("Số tiền bạn nhập không hợp lệ");
 } else {
@@ -32,6 +35,18 @@ if (money % 1000 != 0) {
         money -= 10000;
         muoi++;
     }
+    while (money >= 5000) {
+        money -= 5000;
+        nam++;
+    }
+    while (money >= 2000) {
+        money -= 2000;
+        hai++;
+    }
+    while (money >= 1000) {
+        money -= 1000;
+        mot++;
+    }
 }
 document.write("Số tiền bạn rút được: " + namtram + " tờ 500.000k" );
 document.write("<br>");
@@ -44,5 +59,11 @@ document.write("<br>");
 document.write("Số tiền bạn rút được: " + haimuoi + " tờ 20.000k");
 document.write("<br>");
 document.write("Số tiền bạn rút được: " + muoi + " tờ 10k");
+document.write("<br>");
+document.write("Số tiền bạn rút được: " + nam + " tờ 5k");
+document.write("<br>");
+document.write("Số tiền bạn rút được: " + hai + " tờ 2k");
+document.write("<br>");
+document.write("Số tiền bạn rút được: " + mot + " tờ 1k");
 
 
