@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let crud = [];
+        let choice = 0;
+        let n = 0;
+        while(choice != 7) {
+            console.log("-----MENU-----");
+            console.log("1.Thêm vào danh sách.");
+            console.log("2.Hiển thị danh sách .");
+            console.log("3.Tìm kiếm thông tin theo id");
+            console.log("4.Cập nhập thông tin theo id.");
+            console.log("5.Xóa 1 đối tượng khỏi danh sách danh bạ theo id.");
+            console.log("6.Lọc sản phẩm theo khoảng giá. ");
+            console.log("7.Thoát");
+            choice = +prompt("Mời bạn nhập lựa chọn của mình: ");
+            switch (choice) {
+                case 1:
+                const newCred = {
+                    id: +prompt("Mời bạn nhập ID : "),
+                    name: prompt("Mời bạn nhập tên sản phẩm: "),
+                    price: +prompt("Mời bạn nhập số tiền: "),
+                    category: prompt("Mời bạn nhập danh muc: "),
+                    quantity: +prompt("Mời bạn nhập số lượng: ")
+                    };
+                    contact.push(newCrud);
+                    console.log("Đã thêm thành công");
+                    break;
+                case 2:
+                    console.table(crud);
+                    break;
+                case 3:
+                    idcrud = prompt("Mời bạn nhập số id để tìm kiếm: ");
+                    for(let i = 0;i<crud.length;i++){
+                        if(crud[i].id == idcrud){
+                            console.table(crud[i])
+                        }else{
+                            console.log("Sai thông tin");
+                        }
+                    }
+                    break;
+                case 4:
+                    idUpdate = prompt("Mời bạn nhập số ID để cập nhật thông tin: ");
+                    let itemUpdate = crud.find(item => item.id == idUpdate);
+                    if(itemUpdate) {
+                        itemUpdate.name = prompt("Mời bạn nhập tên mới: ") || itemUpdate.name;
+                        itemUpdate.price = +prompt("Mời bạn nhập giá mới: ") || itemUpdate.price;
+                        itemUpdate.category = prompt("Mời bạn nhập danh mục mới: ") || itemUpdate.category;
+                        itemUpdate.quantity = +prompt("Mời bạn nhập số lượng mới: ") || itemUpdate.quantity;
+                        console.log("Cập nhật thành công!");
+                    } else {
+                        console.log("Không tìm thấy ID.");
+                    }
+                    break
+                case 5:
+                    dltID = +prompt("Nhập ID liên hệ bạn muốn xóa: ");
+                    for (let i = 0; i < crud.length; i++) {
+                        if (crud[i].id === dltID) {
+                            crud.splice(i, 1);
+                            crud.log("Đã xóa thành công ID:", dltID);
+                            break;
+                        }
+                    }
+                    console.log("Không tồn tại ID");
+                    break;
+                case 6:
+                let minPrice = +prompt("Nhập giá thấp nhất: ");
+                    let maxPrice = +prompt("Nhập giá cao nhất: ");
+                    let filteredProducts = crud.filter(item => item.price >= minPrice && item.price <= maxPrice);
+                    if (filteredProducts.length > 0) {
+                        console.table(filteredProducts);
+                    } else {
+                        console.log("Không có sản phẩm nào trong khoảng giá này.");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

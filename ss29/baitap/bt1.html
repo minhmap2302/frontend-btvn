@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let contact = [];
+        let choice = 0;
+        let n = 0;
+        while(choice != 6) {
+            console.log("-----MENU-----");
+            console.log("1.Thêm đối tượng vào danh sách liên hệ.");
+            console.log("2.Hiển thị danh sách danh bạ.");
+            console.log("3.Tìm kiếm thông tin theo số điện thoại");
+            console.log("4.Cập nhập thông tin theo id.");
+            console.log("5.Xóa 1 đối tượng khỏi danh sách danh bạ theo id.");
+            console.log("6.Thoát");
+            choice = +prompt("Mời bạn nhập lựa chọn của mình: ");
+            switch (choice) {
+                case 1:
+                    const newContact = {
+                    id: +prompt("Nhập id cho sách bạn muốn thêm: "),
+                    name: prompt("Nhập tên liên hệ: "),
+                    email: prompt("Nhập email của người liên hệ: "),
+                    phone: prompt("Nhập số điện thoại: ")
+                    };
+                    contact.push(newContact);
+                    console.log("Đã thêm thành công");
+                    break;
+                case 2:
+                    console.table(contact);
+                    break;
+                case 3:
+                    nameSearch = prompt("Mời bạn nhập sđt để tìm kiếm thông tin: ");
+                    let minh = contact.filter((m) => m.phone.includes(nameSearch));
+                    if(minh.length > 0){
+                        console.log("Đây là thông tin bạn muốn tìm kiếm: ");
+                        console.table(minh);
+                    }else{
+                        console.log("Không tồn tại");
+                    }
+                    break;
+                case 4:
+                    idcontact = prompt("Mời bạn nhập số id để cập nhập thông tin: ");
+                    for(let i = 0;i<contact.length;i++){
+                        if(contact[i].id==idcontact){
+                            contact[i].name = prompt("Mời bạn nhập tên mới: ");
+                            contact[i].email = prompt("Mời bạn nhập email mới: ");
+                            contact[i].phone = +prompt("Mời bạn nhập sddt mới: ");
+                            console.log(("Đã thêm thành công"));               
+                        } else {
+                        console.log("Không tồn tại id");
+                        }
+                    }
+                    break;
+                case 5:
+                    dltID = +prompt("Nhập ID liên hệ bạn muốn xóa: ");
+                    for (let i = 0; i < contact.length; i++) {
+                        if (contact[i].id === dltID) {
+                            contact.splice(i, 1);
+                            console.log("Đã xóa thành công ID:", dltID);
+                            break;
+                        }
+                    }
+                    console.log("Không tồn tại ID");
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
