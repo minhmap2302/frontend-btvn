@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Khóa Học</title>
+</head>
+<body>
+    <script>
+        let courses = [];
+        let users = [];
+
+        function addCourse() {
+            let id = parseInt(prompt("Nhập ID khóa học:"));
+            let name = prompt("Nhập tên khóa học:");
+            let instructor = prompt("Nhập tên giáo viên:");
+            courses.push({ id, name, instructor, students: [] });
+            console.log("Thêm khóa học thành công!");
+        }
+
+        function findCourseByName() {
+            let name = prompt("Nhập tên khóa học cần tìm:");
+            let result = courses.filter(course => course.name.toLowerCase().includes(name.toLowerCase()));
+            if (result.length > 0) {
+                console.table(result);
+            } else {
+                console.log("Không tìm thấy khóa học.");
+            }
+        }
+
+        function deleteCourse() {
+            let id = parseInt(prompt("Nhập ID khóa học cần xóa:"));
+            for (let i = 0; i < courses.length; i++) {
+                if (courses[i].id === id) {
+                    users.forEach(user => {
+                        user.registeredCourses = user.registeredCourses.filter(courseId => courseId !== id);
+                    });
+                    courses.splice(i, 1);
+                    console.log("Xóa khóa học thành công!");
+                    return;
+                }
+            }
+            console.log("Không tìm thấy khóa học để xóa.");
+        }
+
+        function addUser() {
+            let id = parseInt(prompt("Nhập ID người dùng:"));
+            let name = prompt("Nhập tên người dùng:");
+            users.push({ id, name, registeredCourses: [] });
+            console.log("Thêm người dùng thành công!");
+        }
+
+        function registerCourse() {
+            let userId = parseInt(prompt("Nhập ID người dùng:"));
+            let courseId = parseInt(prompt("Nhập ID khóa học cần đăng ký:"));
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].id === userId) {
+                    for (let j = 0; j < courses.length; j++) {
+                        if (courses[j].id === courseId) {
+                            if (!users[i].registeredCourses.includes(courseId)) {
+                                users[i].registeredCourses.push(courseId);
+                                courses[j].students.push(userId);
+                                console.log("Đăng ký khóa học thành công!");
+                            } else {
+                                console.log("Người dùng đã đăng ký khóa học này.");
+                            }
+                            return;
+                        }
+                    }
+                }
+            }
+            console.log("Người dùng hoặc khóa học không tồn tại.");
+        }
+
+        function unregisterCourse() {
+            let userId = parseInt(prompt("Nhập ID người dùng:"));
+            let courseId = parseInt(prompt("Nhập ID khóa học cần hủy đăng ký:"));
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].id === userId) {
+                    for (let j = 0; j < courses.length; j++) {
+                        if (courses[j].id === courseId) {
+                            users[i].registeredCourses = users[i].registeredCourses.filter(id => id !== courseId);
+                            courses[j].students = courses[j].students.filter(id => id !== userId);
+                            console.log("Hủy đăng ký khóa học thành công!");
+                            return;
+                        }
+                    }
+                }
+            }
+            console.log("Người dùng hoặc khóa học không tồn tại.");
+        }
+
+        function showUserCourses() {
+            let userId = parseInt(prompt("Nhập ID người dùng:"));
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].id === userId) {
+                    if (users[i].registeredCourses.length > 0) {
+                        let registeredCourses = courses.filter(course => users[i].registeredCourses.includes(course.id));
+                        console.log("Danh sách khóa học của người dùng:");
+                        console.table(registeredCourses);
+                    } else {
+                        console.log("Người dùng chưa đăng ký khóa học nào.");
+                    }
+                    return;
+                }
+            }
+            console.log("Không tìm thấy người dùng.");
+        }
+
+        let choice;
+        do {
+            console.log("\nMenu:");
+            console.log("1. Thêm khóa học");
+            console.log("2. Tìm kiếm khóa học theo tên");
+            console.log("3. Xóa khóa học");
+            console.log("4. Thêm người dùng mới");
+            console.log("5. Đăng ký khóa học");
+            console.log("6. Hủy đăng ký khóa học");
+            console.log("7. Hiển thị danh sách khóa học của người dùng");
+            console.log("8. Thoát");
+            choice = parseInt(prompt("Nhập lựa chọn của bạn:"));
+
+            switch (choice) {
+                case 1:
+                    addCourse();
+                    break;
+                case 2:
+                    findCourseByName();
+                    break;
+                case 3:
+                    deleteCourse();
+                    break;
+                case 4:
+                    addUser();
+                    break;
+                case 5:
+                    registerCourse();
+                    break;
+                case 6:
+                    unregisterCourse();
+                    break;
+                case 7:
+                    showUserCourses();
+                    break;
+                case 8:
+                    console.log("Thoát chương trình.");
+                    break;
+                default:
+                    console.log("Lựa chọn không hợp lệ. Vui lòng thử lại.");
+            }
+        } while (choice !== 8);
+    </script>
+</body>
+</html>

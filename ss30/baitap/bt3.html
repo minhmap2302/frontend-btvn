@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Store Management</title>
+</head>
+<body>
+    <script>
+        let cart = [];
+        let phones = [
+            { id: 1, name: "iPhone 14", price: 30000000, quantity: 10, company: "Apple" },
+            { id: 2, name: "Galaxy S23", price: 25000000, quantity: 8, company: "Samsung" },
+            { id: 3, name: "Redmi Note 12", price: 7000000, quantity: 15, company: "Xiaomi" }
+        ];
+
+        function displayByCompany() {
+            const company = prompt("Nhập tên hãng (ví dụ: Apple, Samsung, Xiaomi):");
+            const result = phones.filter(phone => phone.company.toLowerCase() === company.toLowerCase());
+            if (result.length > 0) {
+                console.table(result);
+            } else {
+                console.log(`Không tìm thấy điện thoại thuộc hãng: ${company}`);
+            }
+        }
+
+        function addPhone() {
+            const id = parseInt(prompt("Nhập mã điện thoại:"));
+            const name = prompt("Nhập tên điện thoại:");
+            const price = parseFloat(prompt("Nhập giá tiền:"));
+            const quantity = parseInt(prompt("Nhập số lượng:"));
+            const company = prompt("Nhập hãng sản xuất:");
+            phones.push({ id, name, price, quantity, company });
+            console.log("Thêm điện thoại mới thành công!");
+        }
+
+        function searchPhone() {
+            const keyword = prompt("Nhập mã hoặc tên điện thoại cần tìm:");
+            const result = phones.find(phone => phone.id == keyword || phone.name.toLowerCase().includes(keyword.toLowerCase()));
+            if (result) {
+                console.table(result);
+            } else {
+                console.log("Không tìm thấy điện thoại phù hợp.");
+            }
+        }
+
+        function purchasePhone() {
+            const id = parseInt(prompt("Nhập mã điện thoại muốn mua:"));
+            const quantity = parseInt(prompt("Nhập số lượng muốn mua:"));
+            const product = phones.find(phone => phone.id === id);
+            if (product) {
+                if (product.quantity >= quantity) {
+                    product.quantity -= quantity;
+                    cart.push({ id: product.id, name: product.name, price: product.price, quantity });
+                    console.log("Mua hàng thành công!");
+                } else {
+                    console.log("Số lượng không đủ.");
+                }
+            } else {
+                console.log("Không tìm thấy sản phẩm.");
+            }
+        }
+
+        function checkoutCart() {
+            if (cart.length === 0) {
+                console.log("Giỏ hàng trống.");
+                return;
+            }
+            let total = 0;
+            cart.forEach(item => { total += item.price * item.quantity; });
+            console.log(`Tổng tiền thanh toán: ${total} VND`);
+            cart = [];
+            console.log("Thanh toán thành công! Giỏ hàng đã được xóa.");
+        }
+
+        function sortPhones() {
+            const choice = prompt("Nhập 'a' để sắp xếp tăng dần, 'b' để sắp xếp giảm dần:");
+            if (choice === 'a') {
+                phones.sort((a, b) => a.price - b.price);
+            } else if (choice === 'b') {
+                phones.sort((a, b) => b.price - a.price);
+            } else {
+                console.log("Lựa chọn không hợp lệ.");
+                return;
+            }
+            console.log("Danh sách sau khi sắp xếp:");
+            console.table(phones);
+        }
+
+        function totalStockValue() {
+            let totalValue = phones.reduce((sum, phone) => sum + (phone.price * phone.quantity), 0);
+            console.log(`Tổng giá trị các điện thoại trong kho: ${totalValue} VND`);
+        }
+
+        function totalQuantityByCompany() {
+            const summary = phones.reduce((acc, phone) => {
+                acc[phone.company] = (acc[phone.company] || 0) + phone.quantity;
+                return acc;
+            }, {});
+            console.log("Tổng số lượng điện thoại theo từng hãng:");
+            console.table(summary);
+        }
+
+        let choice;
+        do {
+            console.log("\nMenu:");
+            console.log("1. Hiển thị danh sách điện thoại theo hãng");
+            console.log("2. Thêm điện thoại mới vào cửa hàng");
+            console.log("3. Tìm kiếm điện thoại");
+            console.log("4. Mua điện thoại");
+            console.log("5. Thanh toán giỏ hàng");
+            console.log("6. Sắp xếp điện thoại theo giá");
+            console.log("   a. Tăng dần");
+            console.log("   b. Giảm dần");
+            console.log("7. Hiển thị tổng giá trị trong kho");
+            console.log("8. Hiển thị tổng số lượng theo hãng");
+            console.log("9. Thoát");
+            choice = parseInt(prompt("Nhập lựa chọn của bạn:"));
+
+            switch (choice) {
+                case 1:
+                    displayByCompany();
+                    break;
+                case 2:
+                    addPhone();
+                    break;
+                case 3:
+                    searchPhone();
+                    break;
+                case 4:
+                    purchasePhone();
+                    break;
+                case 5:
+                    checkoutCart();
+                    break;
+                case 6:
+                    sortPhones();
+                    break;
+                case 7:
+                    totalStockValue();
+                    break;
+                case 8:
+                    totalQuantityByCompany();
+                    break;
+                case 9:
+                    console.log("Thoát chương trình.");
+                    break;
+                default:
+                    console.log("Lựa chọn không hợp lệ. Vui lòng thử lại.");
+            }
+        } while (choice !== 9);
+    </script>
+</body>
+</html>

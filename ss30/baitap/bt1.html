@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function chooseCart() {
+            let choose = prompt("Mời bạn nhập lựa chọn sản phẩm để mua: ");
+            for(let i = 0;i<products.length;i++){
+                if(products[i].id == choose){
+                    console.log("Sản phẩm có trong cửa hàng");
+                    console.table(products[i]);
+                    let m = prompt("Mời bạn nhập số lượng muốn mua: ");
+                    if(m<products[i].quantity || products[i].quantity == 0){
+                        products[i].quantity = products[i].quantity - m;
+                        console.log("Đã mua thành công!");
+                        cart.push({
+                            id: products[i].id,
+                            name: products[i].name,
+                            price: products[i].price,
+                            quantity: m
+                        });
+                    } else {
+                        console.log("Số lượng không hợp lệ");
+                    }
+                }
+            }
+        }
+        function sortCart() {
+            let choose = prompt("Mời bạn nhập lựa chọn  để sắp xếp: ");
+            if(choose === "a"){
+                products.sort((a,b) => (a.price - b.price));
+                console.log("Mảng sau khi sắp xếp là: ");
+                console.table(products);
+            } else if (choose === "b"){
+                products.sort((a,b) => (b.price - a.price));
+                console.log("Mảng sau khi sắp xếp là: ");
+                console.table(products);
+            } else {
+                console.log("Lựa chọn không hợp lệ");
+            }
+        }
+        function sumCart() {
+            if (cart.length === 0) {
+                console.log("Giỏ hàng đang trống.");
+                return;
+            }
+            let total = 0;
+            cart.forEach(item => {total += item.quantity * item.price;});
+            console.log(`Tổng số tiền thanh toán: ${total} VND`);
+        }
+        let cart = [];
+        let products = [  
+            {  
+                id: 1,  
+                name: "mèn mén",  
+                price: 20000,  
+                quantity: 20,  
+                category: "món ăn dân tộc Mông",  
+            },  
+            {  
+                id: 2,  
+                name: "mứt",  
+                price: 80000,  
+                quantity: 21,  
+                category: "món ăn dân tộc Kinh",  
+            },  
+            {  
+                id: 3,  
+                name: "cơm lam",  
+                price: 40000,  
+                quantity: 15,  
+                category: "món ăn dân tộc Mông",  
+            },  
+            {  
+                id: 4,  
+                name: "bánh đậu xanh",  
+                price: 60000,  
+                quantity: 30,  
+                category: "món ăn dân tộc Kinh",  
+            }  
+        ];
+        let choice;
+        do {
+            console.log("\nMenu:");
+            console.log("1. Hiển thị sản phẩm theo danh mục");
+            console.log("2. Chọn sản phẩm để mua");
+            console.log("3. Sắp xếp sản phẩm theo giá (tăng/giảm)");
+            console.log("   a. Tăng dần");
+            console.log("   b. Giảm dần")
+            console.log("4. Tính tổng tiền thanh toán");
+            console.log("5. Thoát");
+            choice = parseInt(prompt("Nhập lựa chọn: "));          
+            switch (choice) {
+                case 1:
+                    console.log("Hiển thị sản phẩm theo danh mục...");
+                    console.table(products);
+                    break;
+                case 2:
+                    chooseCart();
+                    break;
+                case 3:
+                    console.log("Sắp xếp sản phẩm theo giá...");
+                    sortCart();
+                    break;
+                case 4:
+                    console.log("Tính tổng tiền thanh toán...");
+                    sumCart();
+                    break;
+                case 5:
+                    console.log("Thoát chương trình.");
+                    break;
+                default:
+                    console.log("Lựa chọn không hợp lệ. Vui lòng thử lại.");
+            }
+        } while (choice !== 5);
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sách</title>
+</head>
+<body>
+    <script>
+        function displayBooksByCategory() {
+            let category = prompt("Nhập tên thể loại để hiển thị: ");
+            let filteredBooks = books.filter(book => book.category === category);
+            if (filteredBooks.length > 0) {
+                console.log(`Danh sách sách trong thể loại "${category}":`);
+                console.table(filteredBooks);
+            } else {
+                console.log("Không có sách trong thể loại này.");
+            }
+        }
+
+        function addNewBook() {
+            let id = parseInt(prompt("Nhập mã sách: "));
+            let name = prompt("Nhập tên sách: ");
+            let price = parseFloat(prompt("Nhập giá sách: "));
+            let quantity = parseInt(prompt("Nhập số lượng sách: "));
+            let category = prompt("Nhập thể loại sách: ");
+            books.push({ id, name, price, quantity, category });
+            console.log("Đã thêm sách mới vào kho.");
+        }
+
+        function searchBook() {
+            let query = prompt("Nhập tên hoặc mã sách để tìm: ");
+            let result = books.filter(book => book.name.includes(query) || book.id == query);
+            if (result.length > 0) {
+                console.log("Kết quả tìm kiếm:");
+                console.table(result);
+            } else {
+                console.log("Không tìm thấy sách.");
+            }
+        }
+
+        function buyBook() {
+            let id = parseInt(prompt("Nhập mã sách muốn mua: "));
+            for (let i = 0; i < books.length; i++) {
+                if (books[i].id === id) {
+                    console.log("Sách có sẵn trong kho:");
+                    console.table(books[i]);
+                    let m = parseInt(prompt("Nhập số lượng muốn mua: "));
+                    if (m > 0 && m <= books[i].quantity) {
+                        books[i].quantity -= m;
+                        cart.push({ id: books[i].id, name: books[i].name, price: books[i].price, quantity: m });
+                        console.log("Mua sách thành công!");
+                    } else {
+                        console.log("Số lượng không hợp lệ hoặc vượt quá số lượng trong kho.");
+                    }
+                    return; 
+                }
+            }
+            console.log("Không tìm thấy sách trong kho.");
+        }
+
+        function sortBooks() {
+            let choose = prompt("Nhập 'a' để sắp xếp tăng dần hoặc 'b' để sắp xếp giảm dần: ");
+            if (choose === "a") {
+                books.sort((a, b) => a.price - b.price);
+                console.log("Danh sách sách sau khi sắp xếp tăng dần:");
+                console.table(books);
+            } else if (choose === "b") {
+                books.sort((a, b) => b.price - a.price);
+                console.log("Danh sách sách sau khi sắp xếp giảm dần:");
+                console.table(books);
+            } else {
+                console.log("Lựa chọn không hợp lệ.");
+            }
+        }
+
+        function calculateCart() {
+            let totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+            let totalPrice = cart.reduce((sum, item) => sum + (item.quantity * item.price), 0);
+            console.log(`Tổng số lượng sách đã mua: ${totalQuantity}`);
+            console.log(`Tổng tiền thanh toán: ${totalPrice} VND`);
+        }
+
+        function totalBooksInStock() {
+            let total = books.reduce((sum, book) => sum + book.quantity, 0);
+            console.log(`Tổng số lượng sách trong kho: ${total}`);
+        }
+
+        let cart = [];
+        let books = [
+            { id: 1, name: "Truyện Ma Lúc Nửa Đêm", price: 100000, quantity: 10, category: "Kinh dị" },
+            { id: 2, name: "Chỉ Yêu Mỗi Em", price: 200000, quantity: 5, category: "Lãng Mạn" },
+            { id: 3, name: "Conan", price: 150000, quantity: 7, category: "Trinh Thám" },
+            { id: 4, name: "Doraemon", price: 120000, quantity: 8, category: "Manga" }
+        ];
+
+        let choice;
+        do {
+            console.log("\nMenu:");
+            console.log("1. Hiển thị danh sách sách theo thể loại");
+            console.log("2. Thêm sách mới vào kho");
+            console.log("3. Tìm kiếm sách theo tên hoặc id");
+            console.log("4. Mua sách");
+            console.log("5. Sắp xếp sách theo giá");
+            console.log("6. Tính tổng số lượng sách đã mua và tổng tiền");
+            console.log("7. Hiển thị tổng số lượng sách trong kho");
+            console.log("8. Thoát chương trình");
+            choice = prompt("Nhập lựa chọn: ");
+
+            switch (choice) {
+                case "1":
+                    displayBooksByCategory();
+                    break;
+                case "2":
+                    addNewBook();
+                    break;
+                case "3":
+                    searchBook();
+                    break;
+                case "4":
+                    buyBook();
+                    break;
+                case "5":
+                    sortBooks();
+                    break;
+                case "6":
+                    calculateCart();
+                    break;
+                case "7":
+                    totalBooksInStock();
+                    break;
+                case "8":
+                    console.log("Thoát chương trình.");
+                    break;
+                default:
+                    console.log("Lựa chọn không hợp lệ.");
+            }
+        } while (choice !== "8");
+    </script>
+</body>
+</html>
