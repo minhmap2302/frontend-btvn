@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ẩn/Hiện nội dung</title>
+    <style>
+        #container {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        hello my friend
+    </div>
+
+    <button onclick="showText()">Show text</button>
+    <button onclick="hideText()">Hide text</button>
+
+    <script>
+        function showText() {
+            document.getElementById("container").style.display = "block";
+        }
+
+        function hideText() {
+            document.getElementById("container").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

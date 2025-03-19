@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .login-box {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid black;
+            margin: 50px auto;
+            text-align: center;
+        }
+        input {
+            width: 70%;
+            padding: 10px;
+            margin: 10px 0;
+            margin-right: 10px ;
+        }
+        button {
+            padding: 10px 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <label>Username:</label>
+        <input type="text" id="username" placeholder="Nhập username">
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="Nhập password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        function login() {
+            const fixedUsername = "minhdz123@gmail.com";
+            const fixedPassword = "123456";
+            
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            
+            if (username === fixedUsername && password === fixedPassword) {
+                console.log("Đăng nhập thành công");
+            } else {
+                console.log("Đăng nhập thất bại");
+            }
+        }
+    </script>
+</body>
+</html>

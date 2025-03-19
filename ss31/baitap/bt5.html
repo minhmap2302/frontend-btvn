@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nhân viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: black;
+        }
+        table {
+            width: 60%;
+            margin: auto;
+            border-collapse: collapse;
+            color: black;
+            border: 3px solid black;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+        th {
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Danh sách nhân viên</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable"></tbody>
+    </table>
+
+    <script>
+        const employees = [
+            { id: 1, name: "Example 1", age: 18, address: "District" },
+            { id: 2, name: "Example 2", age: 22, address: "District" },
+            { id: 3, name: "Example 3", age: 19, address: "City" }
+        ];
+
+        function renderEmployees() {
+            let tableBody = document.getElementById("employeeTable");
+            tableBody.innerHTML = "";
+            employees.forEach((emp) => {
+                let row = `<tr>
+                    <td>${emp.id}</td>
+                    <td>${emp.name}</td>
+                    <td>${emp.age}</td>
+                    <td>${emp.address}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        renderEmployees();
+    </script>
+
+</body>
+</html>

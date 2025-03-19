@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đổi màu nền</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 50px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+        .purple { 
+            background-color: purple; 
+        }
+        .red { 
+            background-color: red; 
+        }
+        .blue { 
+            background-color: blue; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bấm vào ô để đổi màu nền</h1>
+    <div class="container">
+        <div class="square purple" onclick="changeBg('purple')"></div>
+        <div class="square red" onclick="changeBg('red')"></div>
+        <div class="square blue" onclick="changeBg('blue')"></div>
+    </div>
+
+    <script>
+        function changeBg(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>

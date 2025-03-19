@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        background-color: white;
+        color: black;
+        text-align: center;
+        font-family: Arial;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Chế độ tối</h1>
+    <p>Ấn vô đây để đổi nền</p>
+    <button onclick="doiNen()">Bấm đi</button>
+
+    <script>
+        function doiNen() {
+            if (document.body.style.backgroundColor == "black") {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+            } else {
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white";
+            }
+        }
+    </script>
+</body>
+</html>
