@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body { 
+            text-align: center; 
+            margin: 20px; 
+        }
+        p { 
+            font-size: 16px; 
+        }
+        button { 
+            padding: 10px; 
+            margin: 5px; 
+            cursor: pointer; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 18px; 
+            width: 40px; 
+        }
+        .increase { 
+            background: green; 
+            color: white; 
+        }
+        .decrease { 
+            background: red; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <button class="decrease" onclick="changeFontSize(-2)">−</button>
+    <button class="increase" onclick="changeFontSize(2)">+</button>
+    <p id="text">Đây là đoạn văn bản có thể thay đổi kích thước!</p>
+
+    <script>
+        let fontSize = 16;
+        function changeFontSize(value) {
+            fontSize += value;
+            document.getElementById("text").style.fontSize = fontSize + "px";
+        }
+    </script>
+</body>
+</html>

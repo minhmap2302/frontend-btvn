@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body { 
+            text-align: center; margin-top: 50px; 
+        }
+        input { 
+            padding: 8px; width: 250px; 
+        }
+        button { 
+            padding: 8px 15px; cursor: pointer; 
+        }
+        #result { 
+            margin-top: 10px; font-weight: bold; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Kiểm tra Email</h2>
+    <input type="text" id="email" placeholder="Nhập email của bạn">
+    <button onclick="validateEmail()">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+        function validateEmail() {
+            let email = document.getElementById("email").value;
+            let result = document.getElementById("result");
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|vn)$/;
+            if (emailRegex.test(email)) {
+                result.style.color = "green";
+                result.innerText = "Email hợp lệ!";
+            } else {
+                result.style.color = "red";
+                result.innerText = "Email không hợp lệ!";
+            }
+        }
+    </script>
+</body>
+</html>

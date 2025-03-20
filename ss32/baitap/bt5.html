@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Nhiệm Vụ</title>
+    <style>
+        body { 
+            text-align: center;
+            margin: 20px; 
+        }
+        input { 
+            padding: 8px; 
+            width: 250px; 
+        }
+        button { 
+            padding: 8px 15px; 
+            margin-left: 5px;
+        }
+        ul { 
+            list-style-type: none; 
+            padding: 0; }
+        li { 
+            background: #f3f3f3; 
+            margin: 5px 0; 
+            padding: 10px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-radius: 5px;
+        }
+        .delete-btn { 
+            background: red; 
+            color: white; 
+            border: none; 
+            padding: 5px 10px; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Quản lý Nhiệm Vụ</h2>
+    <input type="text" id="taskInput" placeholder="Nhập nhiệm vụ...">
+    <button onclick="addTask()">Thêm</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            let taskInput = document.getElementById("taskInput");
+            let taskText = taskInput.value.trim();
+
+            if (taskText === "") {
+                alert("Vui lòng nhập nhiệm vụ!");
+                return;
+            }
+
+            let ul = document.getElementById("taskList");
+            let li = document.createElement("li");
+            li.innerHTML = `${taskText} <button class="delete-btn" onclick="deleteTask(this)">Xóa</button>`;
+
+            ul.appendChild(li);
+            taskInput.value = "";
+        }
+
+        function deleteTask(btn) {
+                let li = btn.parentElement;
+                li.remove();
+            }
+    </script>
+</body>
+</html>

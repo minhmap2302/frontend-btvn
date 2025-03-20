@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 50px;
+        }
+        .progress-container {
+            width: 80%;
+            background: gray;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        .progress-bar {
+            width: 0%;
+            height: 30px;
+            background: green;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            font-weight: bold;
+            transition: width 0.3s ease-in-out;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Thanh Tiến Trình</h2>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar">0%</div>
+    </div>
+    <button onclick="changeProgress(10)">Tăng tiến trình</button>
+    <button onclick="changeProgress(-10)">Giảm tiến trình</button>
+
+    <script>
+        let progress = 0;
+
+        function changeProgress(value) {
+            progress = Math.min(100, Math.max(0, progress + value));
+            document.getElementById("progressBar").style.width = progress + "%";
+            document.getElementById("progressBar").textContent = progress + "%";
+        }
+    </script>
+</body>
+</html>
