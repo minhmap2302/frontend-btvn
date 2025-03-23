@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Lọc sản phẩm theo danh mục</h2>
+        <label for="category">Chọn danh mục:</label>
+        <select id="category">
+            <option value="Tất cả">Tất cả</option>
+            <option value="Đồ ăn">Đồ ăn</option>
+            <option value="Nước">Nước</option>
+            <option value="Dụng cụ">Dụng cụ</option>
+        </select>
+        <button onclick="filterProducts()">Lọc</button>
+        
+        <h3>Kết quả:</h3>
+        <ul id="productList"></ul>
+    </div>
+    
+    <script>
+        let products = [
+            { name: "Rau sạch", category: "Đồ ăn" },
+            { name: "Thịt lợn", category: "Đồ ăn" },
+            { name: "Pepsi không calo", category: "Nước" },
+            { name: "Cocacola", category: "Nước" },
+            { name: "Cơ lê", category: "Dụng cụ" },
+            { name: "Tuy vít", category: "Dụng cụ" }
+        ];
+        
+        function filterProducts() {
+            let selectedCategory = document.getElementById("category").value;
+            let filteredProducts = products.filter(product => 
+                selectedCategory === "Tất cả" || product.category === selectedCategory
+            );
+            
+            let productList = document.getElementById("productList");
+            productList.innerHTML = "";
+            
+            filteredProducts.forEach(product => {
+                let li = document.createElement("li");
+                li.textContent = `${product.name} - Danh mục: ${product.category}`;
+                productList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

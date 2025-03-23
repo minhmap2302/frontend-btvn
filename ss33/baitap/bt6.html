@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document0</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .weather-info {
+            margin-top: 20px;
+        }
+        .temp {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ứng dụng Thời tiết</h2>
+    <div class="container">
+        <input type="text" id="cityInput" placeholder="Nhập thành phố">
+        <button onclick="searchWeather()">Tìm</button>
+        
+        <div class="weather-info">
+            <h3 id="cityName"></h3>
+            <p class="temp" id="temp"></p>
+            <p id="desc"></p>
+        </div>
+    </div>
+
+    <script>
+        const weatherData = {
+            "Hà Nội": { temperature: 25, description: "Mát" },
+            "Hồ Chí Minh": { temperature: 32, description: "Nắng" },
+            "Đà Nẵng": { temperature: 28, description: "Mưa rào" }
+        };
+
+        function searchWeather() {
+            const city = document.getElementById("cityInput").value.trim();
+            const data = weatherData[city];
+
+            if (data) {
+                document.getElementById("cityName").innerText = city;
+                document.getElementById("temp").innerText = `🌡 ${data.temperature}°C`;
+                document.getElementById("desc").innerText = `🌥 ${data.description}`;
+            } else {
+                document.getElementById("cityName").innerText = "Không tìm thấy!";
+                document.getElementById("temp").innerText = "";
+                document.getElementById("desc").innerText = "";
+            }
+        }
+    </script>
+</body>
+</html>
+0
