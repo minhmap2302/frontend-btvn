@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management</title>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 800px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+button {
+  background: #6a11cb;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #2575fc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #6a11cb;
+  color: white;
+}
+
+td button {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+td button:first-child {
+  background: #ffc107;
+  color: black;
+}
+
+td button:last-child {
+  background: #dc3545;
+  color: white;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task Management</h1>
+      <input id="content" type="text" placeholder="Content" />
+      <input id="dueDate" type="date" />
+      <select id="status">
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <input id="assignedTo" type="text" placeholder="Username" />
+      <button onclick="addTask()">Submit</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Content</th>
+            <th>Due date</th>
+            <th>Status</th>
+            <th>Assigned To</th>
+            <th colspan="2">Action</th>
+          </tr>
+        </thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+
+    <script>
+      let courses = JSON.parse(localStorage.getItem("courses")) || [
+        { id: 1, content: "Learn JavaScript Session 01", dueDate: "2023-04-17", status: "Pending", assignedTo: "Anh Bách" },
+        { id: 2, content: "Learn JavaScript Session 02", dueDate: "2023-04-17", status: "Pending", assignedTo: "Lâm Th" },
+        { id: 3, content: "Learn CSS Session 01", dueDate: "2023-04-17", status: "Pending", assignedTo: "Hiếu Ci Ốt Ốt" }
+      ];
+
+      function render() {
+        let list = document.getElementById("list");
+        list.innerHTML = "";
+        courses.forEach((item, index) => {
+          list.innerHTML += `
+            <tr>
+              <td>${item.id}</td>
+              <td>${item.content}</td>
+              <td>${item.dueDate}</td>
+              <td>${item.status}</td>
+              <td>${item.assignedTo}</td>
+              <td><button onclick="updateTask(${index})">Sửa</button></td>
+              <td><button onclick="deleteTask(${index})">Xóa</button></td>
+            </tr>
+          `;
+        });
+      }
+
+      function addTask() {
+        let content = document.getElementById("content").value.trim();
+        let dueDate = document.getElementById("dueDate").value;
+        let status = document.getElementById("status").value;
+        let assignedTo = document.getElementById("assignedTo").value.trim();
+
+        if (!content || !dueDate || !assignedTo) {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return;
+        }
+
+        let newId = courses.length > 0 ? Math.max(...courses.map(c => c.id)) + 1 : 1;
+        let newTask = { id: newId, content, dueDate, status, assignedTo };
+
+        courses.push(newTask);
+        localStorage.setItem("courses", JSON.stringify(courses));
+
+        document.getElementById("content").value = "";
+        document.getElementById("dueDate").value = "";
+        document.getElementById("assignedTo").value = "";
+
+        render();
+      }
+
+      function updateTask(index) {
+        let task = courses[index];
+
+        let newContent = prompt("Nhập Content mới:", task.content);
+        let newDueDate = prompt("Nhập Due Date mới:", task.dueDate);
+        let newStatus = prompt("Nhập trạng thái:", task.status);
+        let newAssignedTo = prompt("Nhập tên người làm:", task.assignedTo);
+
+        if (newContent) task.content = newContent;
+        if (newDueDate) task.dueDate = newDueDate;
+        if (newStatus) task.status = newStatus;
+        if (newAssignedTo) task.assignedTo = newAssignedTo;
+
+        localStorage.setItem("courses", JSON.stringify(courses));
+        render();
+      }
+
+      function deleteTask(index) {
+        if (confirm("Bạn có chắc chắn muốn xóa task này không?")) {
+          courses.splice(index, 1);
+          localStorage.setItem("courses", JSON.stringify(courses));
+          render();
+        }
+      }
+
+      render();
+    </script>
+  </body>
+</html>
