@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+      }
+      .head {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+      }
+      .head button {
+        width: 200px;
+        height: 40px;
+        background-color: rgb(50, 50, 232);
+        color: white;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+      }
+      .dock {
+        background-color: aquamarine;
+        position: relative;
+      }
+      .dock select {
+        position: absolute;
+        right: 320px;
+        width: 300px;
+        height: 40px;
+        border: 1px solid gray;
+        border-radius: 8px;
+      }
+      .dock input {
+        position: absolute;
+        right: 0;
+        width: 300px;
+        height: 40px;
+        border: 1px solid gray;
+        border-radius: 8px;
+      }
+      .body {
+        width: 100%;
+        position: absolute;
+        top: 150px;
+      }
+      .body table {
+        border: none;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .body table thead {
+        background-color: gainsboro;
+        height: 50px;
+      }
+      table tbody td {
+        text-align: center;
+        border-bottom: 1px solid gray;
+      }
+      /* MODAL */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        text-align: center;
+      }
+      .modal input,
+      .modal select {
+        width: 100%;
+        height: 30px;
+        margin: 10px 0;
+        padding: 5px;
+      }
+      .modal button {
+        margin: 5px;
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1>Danh mục</h1>
+        <button onclick="openModal()">Thêm danh mục mới</button>
+      </div>
+
+      <div class="dock">
+        <select name="" id="">
+          <option value="">Chọn trạng thái</option>
+          <option value="active">Đang hoạt động</option>
+          <option value="inactive">Ngừng hoạt động</option>
+        </select>
+        <input type="text" placeholder="Tìm kiếm danh mục theo tên" />
+      </div>
+
+      <div class="body">
+        <table>
+          <thead>
+            <tr>
+              <th>Mã danh mục</th>
+              <th>Tên danh mục</th>
+              <th>Trạng thái</th>
+              <th>Chức năng</th>
+            </tr>
+          </thead>
+          <tbody id="list"></tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <h2>Thêm danh mục mới</h2>
+        <input type="text" id="id" placeholder="Mã danh mục" />
+        <input type="text" id="name" placeholder="Tên danh mục" />
+        <select id="status">
+          <option value="Đang hoạt động">Đang hoạt động</option>
+          <option value="Ngừng hoạt động">Ngừng hoạt động</option>
+        </select>
+        <button onclick="addCategory()">Thêm</button>
+        <button onclick="closeModal()">Hủy</button>
+      </div>
+    </div>
+
+    <script>
+      let arr = JSON.parse(localStorage.getItem("arr")) || [
+        { id: "DM001", name: "Quần áo", status: "Đang hoạt động" },
+        { id: "DM002", name: "Kính mắt", status: "Ngừng hoạt động" },
+        { id: "DM003", name: "Giày dép", status: "Đang hoạt động" },
+        { id: "DM004", name: "Thời trang nam", status: "Ngừng hoạt động" },
+        { id: "DM005", name: "Thời trang nữ", status: "Ngừng hoạt động" },
+        { id: "DM006", name: "Hoa quả", status: "Ngừng hoạt động" },
+        { id: "DM007", name: "Rau", status: "Đang hoạt động" },
+        { id: "DM008", name: "Điện thoại", status: "Ngừng hoạt động" },
+      ];
+
+      function render() {
+        let str = "";
+        for (let i = 0; i < arr.length; i++) {
+          str += `
+            <tr>
+                <td>${arr[i].id}</td>
+                <td>${arr[i].name}</td>
+                <td>${arr[i].status}</td>
+                <td>
+                    <button onclick="editCategory('${arr[i].id}')">Sửa</button>
+                    <button onclick="deleteCategory('${arr[i].id}')">Xóa</button>
+                </td>    
+            </tr>
+            `;
+        }
+        document.getElementById("list").innerHTML = str;
+      }
+      render();
+
+      function openModal() {
+        document.getElementById("modal").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+
+      function addCategory() {
+        let id = document.getElementById("id").value.trim();
+        let name = document.getElementById("name").value.trim();
+        let status = document.getElementById("status").value;
+
+        if (!id || !name) {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return;
+        }
+
+        let exists = arr.some((item) => item.id === id);
+        if (exists) {
+          alert("Mã danh mục đã tồn tại!");
+          return;
+        }
+
+        arr.push({ id, name, status });
+        localStorage.setItem("arr", JSON.stringify(arr));
+        render();
+        closeModal();
+      }
+
+      function deleteCategory(id) {
+        arr = arr.filter((item) => item.id !== id);
+        localStorage.setItem("arr", JSON.stringify(arr));
+        render();
+      }
+    </script>
+  </body>
+</html>

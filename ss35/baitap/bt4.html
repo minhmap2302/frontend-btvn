@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            width: 500px;
+        }
+        .employees td{
+            height: 30px;
+        }
+        .employees th{
+            background-color: rgb(176, 173, 173);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách nhân viên Rikkei</h1>
+        <table class="table1" border="1px" >
+            <tr>
+                <td>
+                    <label for="">Tên nhân viên: </label>
+                    <input class="name" type="text">
+                </td>
+                <td>
+                    <label for="">Chức vụ</label>
+                    <input class="position" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button onclick="add()">Thêm nhân viên</button>
+                </td>
+            </tr>
+        </table>
+        <table class="employees" border="1">
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Chức Vụ</th>
+                <th>Hành động</th>
+            </tr>
+          <tbody id="list"></tbody>
+        </table>
+        <table>
+            <tr>
+                <td id="listPage" align="center">
+                    <button class="item1">Previous</button>
+                    
+                    <button class="item6">Next</button>
+                </td>
+            </tr>
+        </table>
+        <script>
+            
+            
+        let arr=JSON.parse(localStorage.getItem("arr"))||[];
+        console.log(arr.length);
+        let PageNumber;
+        let pageQuantity=Math.ceil(arr.length/3);
+        let item=3;
+        let page=1;
+        let start=page*item-item;
+        let end=page*item;
+       
+        function render(){
+            let list=document.getElementById("list");
+            str="";
+             arr.slice(start, end).forEach((item, index) => {
+                
+            str+=
+            `
+            <tr>
+            <td>${item.id}</td>
+            <td>${item.name}</td>
+            <td>${item.position}</td>
+            <td><button onclick="deleteEmployee(${index})">Xóa</button></td>
+            </tr>
+            `
+        
+            });
+            list.innerHTML=str;
+            
+        }
+        render();   
+        renderPage();
+        function add() {
+        let name = document.querySelector(".name").value.trim();
+        let position = document.querySelector(".position").value.trim();
+        if (name === "" || position === "") {
+            alert("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+        let newUser={
+            id:arr.length+1,
+            name:name,
+            position:position
+        }
+        arr.push(newUser);
+        pageQuantity=Math.ceil(arr.length/3);
+        
+        render();
+        renderPage();
+        document.querySelector(".name").value = "";
+        document.querySelector(".position").value = "";
+        localStorage.setItem("arr",JSON.stringify(arr));
+        }
+    function deleteEmployee(index) {
+            arr.splice(index, 1);
+            pageQuantity=Math.ceil(arr.length/3);
+            localStorage.setItem("arr", JSON.stringify(arr));
+
+            render();
+            renderPage();
+        }
+        
+    function renderPage(){
+        let listPage=document.getElementById("listPage");
+        
+        console.log(pageQuantity);
+        str1=""
+        for(let i=0;i<pageQuantity;i++){
+            PageNumber=i+1;
+            str1+=`
+            <button onclick="pagee(${PageNumber})">${i+1}</button>
+            `
+        }
+        listPage.innerHTML=`<button class="item1">Previous</button>${str1}<button class="item6">Next</button>`;
+    }
+    
+    function pagee(PageNumber){
+        
+        start=PageNumber*item-item;
+        end=PageNumber*item; 
+        
+render()
+    }
+</script>
+
+</body>
+</html>

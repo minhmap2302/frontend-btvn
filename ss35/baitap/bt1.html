@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f4f4f4;
+            padding: 10px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            margin-left: 5px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h2>To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Nhập công việc">
+    <button onclick="addTask()">Thêm</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        function renderTasks() {
+            let taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            tasks.forEach((task, index) => {
+                let li = document.createElement("li");
+                li.innerHTML = `
+                    <span>${task}</span>
+                    <div>
+                        <button onclick="editTask(${index})">Sửa</button>
+                        <button onclick="deleteTask(${index})">Xóa</button>
+                    </div>
+                `;
+                taskList.appendChild(li);
+            });
+        }
+
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let task = input.value.trim();
+            if (task === "") {
+                alert("Vui lòng nhập công việc!");
+                return;
+            }
+            tasks.push(task);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            input.value = "";
+            renderTasks();
+        }
+
+        function deleteTask(index) {
+            if (confirm("Bạn có chắc chắn muốn xóa công việc này không?")) {
+                tasks.splice(index, 1);
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+                renderTasks();
+            }
+        }
+
+        function editTask(index) {
+            let newTask = prompt("Chỉnh sửa công việc:", tasks[index]);
+            if (newTask !== null && newTask.trim() !== "") {
+                tasks[index] = newTask.trim();
+                localStorage.setItem("tasks", JSON.stringify(tasks));
+                renderTasks();
+            }
+        }
+
+        window.onload = renderTasks;
+    </script>
+</body>
+</html>

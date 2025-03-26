@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+      }
+      .head {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+      }
+      .head button {
+        width: 200px;
+        height: 40px;
+        background-color: rgb(50, 50, 232);
+        color: white;
+        border-radius: 8px;
+        border: none;
+      }
+      .dock {
+        background-color: aquamarine;
+        position: relative;
+      }
+      .dock select {
+        position: absolute;
+        right: 320px;
+        width: 300px;
+        height: 40px;
+        border: 1px solid gray;
+        border-radius: 8px;
+      }
+      .dock input {
+        position: absolute;
+        right: 0;
+        width: 300px;
+        height: 40px;
+        border: 1px solid gray;
+        border-radius: 8px;
+      }
+      .body {
+        width: 100%;
+        position: absolute;
+        top: 150px;
+      }
+      .body table {
+        border: none;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .body table thead {
+        background-color: gainsboro;
+        height: 50px;
+      }
+      table tbody td {
+        text-align: center;
+        border-bottom: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1>Danh mục</h1>
+        <button>Thêm danh mục mới</button>
+      </div>
+
+      <div class="dock">
+        <select id="statusFilter" onchange="filterByStatus()">
+          <option value="">Tất cả trạng thái</option>
+          <option value="Đang hoạt động">Đang hoạt động</option>
+          <option value="Ngừng hoạt động">Ngừng hoạt động</option>
+        </select>
+        <input type="text" placeholder="Tìm kiếm danh mục theo tên" />
+      </div>
+
+      <div class="body">
+        <table>
+          <thead>
+            <tr>
+              <th>Mã danh mục</th>
+              <th>Tên danh mục</th>
+              <th>Trạng thái</th>
+              <th>Chức năng</th>
+            </tr>
+          </thead>
+          <tbody id="list"></tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      let arr = JSON.parse(localStorage.getItem("arr")) || [
+        { id: "DM001", name: "Quần áo", status: "Đang hoạt động" },
+        { id: "DM002", name: "Kính mắt", status: "Ngừng hoạt động" },
+        { id: "DM003", name: "Giày dép", status: "Đang hoạt động" },
+        { id: "DM004", name: "Thời trang nam", status: "Ngừng hoạt động" },
+        { id: "DM005", name: "Thời trang nữ", status: "Ngừng hoạt động" },
+        { id: "DM006", name: "Hoa quả", status: "Ngừng hoạt động" },
+        { id: "DM007", name: "Rau", status: "Đang hoạt động" },
+        { id: "DM008", name: "Điện thoại", status: "Ngừng hoạt động" },
+      ];
+
+      function filterByStatus() {
+        let selectedStatus = document.getElementById("statusFilter").value;
+        render(selectedStatus);
+      }
+
+      function render(filterStatus = "") {
+        let str = "";
+        for (let i = 0; i < arr.length; i++) {
+          if (filterStatus && arr[i].status !== filterStatus) continue;
+
+          str += `
+            <tr>
+              <td>${arr[i].id}</td>
+              <td>${arr[i].name}</td>
+              <td>${arr[i].status}</td>
+              <td>
+                <button onclick="editCategory('${arr[i].id}')">Sửa</button>
+                <button onclick="deleteCategory('${arr[i].id}')">Xóa</button>
+              </td>    
+            </tr>`;
+        }
+        document.getElementById("list").innerHTML = str;
+      }
+
+      render();
+    </script>
+  </body>
+</html>
