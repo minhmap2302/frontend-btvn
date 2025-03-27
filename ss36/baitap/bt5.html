@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      input {
+        margin-top: 10px;
+        width: 300px;
+        height: 30px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        display: inline;
+        margin-bottom: 10px;
+      }
+      button {
+        width: 60px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+        display: inline-block;
+      }
+      .list {
+        display: flex;
+        gap: 20px;
+      }
+      .item {
+        width: 300px;
+        height: 300px;
+        box-shadow: 0 0 10px 0 gray;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        padding-top: 10px;
+      }
+      li {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        border:none;
+        border-radius: 5px;
+        background-color: rgb(192, 188, 188);
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+      }
+      .next{
+        background-color: green;
+
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quản lí công việc</h1>
+      <div class="search">
+        <input id="taskInput" type="text" />
+        <button onclick="add()">Thêm</button>
+      </div>
+      <div class="list">
+        <div id="part1" class="item">
+          <h2>Chờ xử lý</h2>
+          <ul></ul>
+        </div>
+        <div id="part2" class="item">
+          <h2>Đang làm</h2>
+          <ul></ul>
+        </div>
+        <div id="part3" class="item">
+          <h2>Hoàn thành</h2>
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      let list = JSON.parse(localStorage.getItem("list")) || [
+        { name: "sd", status: 1  },
+        { name: "sdsd", status: 0 },
+        { name: "sdsd", status: 2 },
+      ];
+
+      function render() {
+        let str1 = "";
+        let str2 = "";
+        let str3 = "";
+        
+        
+        list.forEach((item,index) => {
+          if (list[index].status == 0) {
+            str1 += `<li>${list[index].name}
+            <button class="next" onclick="next(${index})">Chuyển tiếp</button></li>`;
+          }
+          if (list[index].status == 1) {
+            str2 += `<li>${list[index].name}
+            <button class="next" onclick="next(${index})">Chuyển tiếp</button></li>`;
+          }
+          if (list[index].status == 2) {
+            str3 += `<li>${list[index].name}</li>`;
+          }
+          });
+        
+        document.getElementById("part1").querySelector("ul").innerHTML = str1;
+        document.getElementById("part2").querySelector("ul").innerHTML = str2;
+        document.getElementById("part3").querySelector("ul").innerHTML = str3;
+      }
+      render();
+      function add(){
+        let value=document.getElementById("taskInput").value;
+        console.log(value);
+        let newItem={
+            name:value,
+            status:0
+        }
+        list.push(newItem);
+        localStorage.setItem("list",JSON.stringify(list));
+        render();
+      }
+      function next (index){
+        list[index].status++;
+        localStorage.setItem("list",JSON.stringify(list));
+        render();
+        
+      }
+      
+    </script>
+  </body>
+</html>

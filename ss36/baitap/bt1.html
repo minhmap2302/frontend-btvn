@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form1, .form2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        button{
+            border: none;
+            background-color: blue;
+            color: white;
+            width: 90px;
+            height: 40px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div  class="container">
+        <div id="form1" class="form1">
+            <h1 >Nhập tên của bạn</h1>
+            <input id="name" type="text">
+            <button onclick="pri()" id="save">Lưu</button>
+        </div>
+        <div id="form2" class="form2">
+            <h1 id="say">Chào bạn,</h1>
+            <button onclick="he()" id="but">Đổi tên</button>
+        </div>
+    </div>
+    <script>
+        let name=localStorage.getItem("name")||"";
+        function pri(){
+            name=document.getElementById("name").value;
+            localStorage.setItem("name",name);
+            document.getElementById("form1").style.display="none";
+            document.getElementById("form2").style.display="flex";
+
+            document.getElementById("say").innerHTML="Chào bạn, "+name;
+        }
+        function he(){
+            document.getElementById("form2").style.display="none";
+            document.getElementById("form1").style.display="flex";
+        }
+        
+        if(name!=""){
+            document.getElementById("form1").style.display="none";
+            document.getElementById("say").innerHTML="Chào bạn, "+name;
+            pri();
+        }
+        if(name==""){
+            he();
+    }
+       
+
+    </script>
+</body>
+</html>

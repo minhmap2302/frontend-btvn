@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <label>Email:</label><br />
+    <input type="text" id="email" /><br />
+    <label>Password:</label><br />
+    <input id="pass" type="password" /><br />
+    <label>Confirm Password:</label><br />
+    <input id="confirmPass" type="password" /><br />
+    <button onclick="register()">Register</button>
+<a href="./bt7.2.html">Đến trang đăng nhập</a>
+    <script>
+      function register() {
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+        let confirmPass = document.getElementById("confirmPass").value;
+
+        if (email === "") {
+          console.log("Email không được để trống");
+          return;
+        }
+
+        if (!(email.includes("@") && (email.includes(".com") || email.includes(".vn")))) {
+          console.log("Email không hợp lệ");
+          return;
+        }
+
+        if (pass === "") {
+          console.log("Mật khẩu không được để trống");
+          return;
+        }
+
+        if (pass !== confirmPass) {
+          console.log("Mật khẩu không trùng khớp");
+          return;
+        }
+
+        let count = 0;
+        for (let i = 0; i < users.length; i++) {
+          if (email == users[i].email) {
+            console.log("Email đã tồn tại");
+            count++;
+          }
+        }
+
+        if (count === 0) {
+          let user = { email: email, pass: pass };
+          users.push(user);
+          localStorage.setItem("users", JSON.stringify(users));
+          console.log("Đăng ký thành công");
+          window.location="./baitap7.2.html";
+          
+        }
+      }
+    </script>
+  </body>
+</html>

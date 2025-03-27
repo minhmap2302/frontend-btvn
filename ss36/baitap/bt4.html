@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách sản phẩm</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="script.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f5f5f5;
+        text-align: center;
+        padding-top: 80px; /* Để tránh bị navbar che mất nội dung */
+        margin: 0;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      /* Thanh Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        transition: background 0.3s;
+        padding-bottom: 40px;
+      }
+
+      .dark-mode .navbar {
+        background: #333;
+        color: white;
+      }
+
+      /* Nút Dark Mode */
+      .dark-mode-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dark-mode-toggle img {
+        width: 32px;
+        height: 32px;
+      }
+
+      /* Container danh sách sản phẩm */
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      /* Danh sách sản phẩm */
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      /* Card sản phẩm */
+      .product-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Ảnh sản phẩm */
+      .product-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .product-card:hover .product-image img {
+        transform: scale(1.05);
+      }
+
+      /* Thông tin sản phẩm */
+      .product-info {
+        padding: 15px;
+      }
+
+      h2 {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .price {
+        font-size: 16px;
+        color: #e74c3c;
+        font-weight: 600;
+      }
+
+      /* Nút mua hàng */
+      .buy-btn {
+        display: inline-block;
+        background: #3498db;
+        color: white;
+        padding: 10px 12px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.3s;
+      }
+
+      .buy-btn:hover {
+        background: #2980b9;
+      }
+
+      /* Chế độ Dark Mode */
+      .dark-mode {
+        background: #1e1e1e;
+        color: white;
+      }
+
+      .dark-mode .product-card {
+        background: #333;
+        color: white;
+      }
+
+      .dark-mode .buy-btn {
+        background: #e67e22;
+      }
+
+      .dark-mode .buy-btn:hover {
+        background: #d35400;
+      }
+      .change {
+        color: white;
+        background-color: #313131;
+      }
+      .change1 {
+        color: white;
+        background-color: black;
+      }
+      .big {
+        width: 100%;
+        height: 1000px;
+        padding-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Thanh Navbar -->
+    <nav id="item1" class="navbar change">
+      <h1>Danh Sách Sản Phẩm</h1>
+      <button id="trans" onclick="transform()" class="dark-mode-toggle">
+        <img
+          id="mode-icon"
+          src="https://img.icons8.com/ios-filled/50/sun.png"
+          alt="Dark Mode"
+        />
+      </button>
+    </nav>
+    <div id="item" class="big change1">
+      <div id="item" class="container">
+        <div class="product-list">
+          <div class="product-card change">
+            <div class="product-image">
+              <img
+                src="https://imgs.search.brave.com/vtFBWgdZjcpMjdO2YfoXY3CGCpzer6t_UV7QXB8z8x0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzA0/NTYvNTA3MC82NTgx/L2ZpbGVzL3RvcC0y/My1tYXUtZ2lheS1z/bmVha2VyLWRhbmct/ZHVvYy1zYW4tbHVu/Zy1uaGF0LW5hbS0y/MDIyXzYwMHg2MDAu/anBnP3Y9MTY2Njk0/MDE4OA"
+                alt="Giày Sneaker"
+              />
+            </div>
+            <div class="product-info change">
+              <h2>Giày Sneaker</h2>
+              <p class="price">1.200.000đ</p>
+              <button class="buy-btn">Mua ngay</button>
+            </div>
+          </div>
+
+          <div class="product-card change">
+            <div class="product-image">
+              <img
+                src="https://imgs.search.brave.com/wE9-oIFuVaPAVHk3wR8CQTsPpDV6wGMqu4xnW9uMPjQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcm9k/dWN0LmhzdGF0aWMu/bmV0LzIwMDAwMDQz/OTg1My9wcm9kdWN0/L2NlY2I1M2Y5LWIy/MzgtNDViMC1iZWVh/LWQwOTVkZjY0MzY5/ZF9hOWYxMjRmOTQ3/MzQ0ZjJlYjVhZjc5/ZTVjNTQ3Y2ExYV9s/YXJnZS5qcGc"
+                alt="Đồng hồ nam"
+              />
+            </div>
+            <div class="product-info change">
+              <h2>Đồng hồ nam</h2>
+              <p class="price">2.500.000đ</p>
+              <button class="buy-btn">Mua ngay</button>
+            </div>
+          </div>
+
+          <div class="product-card change">
+            <div class="product-image">
+              <img
+                src="https://imgs.search.brave.com/OtEecSvDTRo3MaS3k2iuqnLnyzHxfp3QO8X0oVWLAUY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/MzFEaExYZzA2RUwu/anBn"
+                alt="Laptop Gaming"
+              />
+            </div>
+            <div class="product-info change">
+              <h2>Laptop Gaming</h2>
+              <p class="price">15.000.000đ</p>
+              <button class="buy-btn">Mua ngay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+  
+
+ let id;
+  function applyTheme() {
+    let item = document.getElementById("item");
+    let items1 = document.querySelectorAll("#item1");
+    let productInfos = document.querySelectorAll(".product-info");
+    let productInfos2 = document.querySelectorAll(".product-card");
+
+    let isDarkMode = id === "2";
+
+    item.classList.toggle("change1", isDarkMode);
+    items1.forEach((el) => el.classList.toggle("change", isDarkMode));
+    productInfos.forEach((el) => el.classList.toggle("change", isDarkMode));
+    productInfos2.forEach((el) => el.classList.toggle("change", isDarkMode));
+  }
+
+ 
+  function transform() {
+    id = id === "1" ? "2" : "1"; 
+    localStorage.setItem("id", id); 
+    applyTheme(); 
+  }
+  document.addEventListener("DOMContentLoaded", applyTheme);
+</script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do you love me?</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: pink;
+        overflow: hidden;
+      }
+
+      .container {
+        margin-top: 100px;
+        position: relative;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+      }
+
+      #yesBtn {
+        background-color: #ff4d4d;
+        color: white;
+      }
+
+      #noBtn {
+        background-color: #666;
+        color: white;
+        position: absolute;
+      }
+
+      img#bearImage {
+        width: 200px;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      img#bearImage:hover {
+        transform: scale(1.1);
+      }
+
+      .heart {
+        position: absolute;
+        color: red;
+        font-size: 24px;
+        animation: floatUp 2s ease-in-out forwards;
+      }
+
+      .message {
+        margin-top: 20px;
+        font-size: 20px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      @keyframes floatUp {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-200px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        id="bearImage"
+        src="https://i.pinimg.com/originals/e9/d8/d7/e9d8d7a965e6d79c96c00b89bb17d9a3.gif"
+        alt="Bear"
+      />
+      <h1 id="question">Do you love me?</h1>
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+      <div id="message" class="message" style="display: none;"></div>
+    </div>
+
+    <script>
+      const noBtn = document.getElementById("noBtn");
+      const yesBtn = document.getElementById("yesBtn");
+      const bearImage = document.getElementById("bearImage");
+      const message = document.getElementById("message");
+      const question = document.getElementById("question");
+
+      // Nút "No" chạy nhanh hơn
+      noBtn.addEventListener("mouseover", () => {
+        const newX = Math.random() * (window.innerWidth - 100);
+        const newY = Math.random() * (window.innerHeight - 100);
+
+        noBtn.style.position = "absolute";
+        noBtn.style.left = `${newX}px`;
+        noBtn.style.top = `${newY}px`;
+      });
+
+      // Nút "Yes" với hiệu ứng trái tim
+      yesBtn.addEventListener("click", () => {
+        yesBtn.style.transition = "all 1s ease";
+        yesBtn.style.transform = "scale(1.5)";
+        yesBtn.style.backgroundColor = "red";
+        yesBtn.innerText = "❤️";
+
+        // Hiển thị trái tim bay lên
+        createFloatingHeart();
+
+        // Thay đổi hình ảnh và hiển thị thông báo
+        setTimeout(() => {
+          bearImage.src =
+            "https://i.etsystatic.com/31885922/r/il/11e388/3324023994/il_fullxfull.3324023994_dcbf.jpg";
+          alert("I love you too ❤️");
+
+          // Ẩn câu hỏi và các nút
+          question.style.display = "none";
+          yesBtn.style.display = "none";
+          noBtn.style.display = "none";
+
+          // Hiển thị tâm sự sau khi bấm OK
+          message.style.display = "block";
+          message.innerText = "Thực sự anh muốn gặp em quasaaa,nhanh ra đây với anh nhaaaaaa";
+        }, 500);
+      });
+
+      // Tạo trái tim bay lên
+      function createFloatingHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = "❤️";
+        heart.style.left = `${Math.random() * window.innerWidth}px`;
+        heart.style.top = `${window.innerHeight - 50}px`;
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

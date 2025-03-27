@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách món ăn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .food-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .food-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .food-item h3 {
+            margin: 0;
+        }
+        .food-item button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .food-item button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Danh sách món ăn</h2>
+        <div id="foodList"></div>
+    </div>
+    <script>
+        let foods = [
+            { id: 1, name: "Phở bò", likes: 0, image: "https://tse4.mm.bing.net/th?id=OIP.zJ6U0UGzo54A5NfHqBM2MwHaHa&pid=Api&P=0&h=180" },
+            { id: 2, name: "Bánh mì", likes: 0, image: "https://tse3.mm.bing.net/th?id=OIP._Vw44lgyJyC5mj8wGY6RywHaEo&pid=Api&P=0&h=180" },
+            { id: 3, name: "Cơm tấm", likes: 0, image: "https://tse3.mm.bing.net/th?id=OIP.s0yJBLAIl1OsoYH6ZXyJ3gHaFy&pid=Api&P=0&h=180" }
+    ]
+        function loadLikes() {
+            let storedLikes = JSON.parse(localStorage.getItem("foodLikes")) || {};
+            foods.forEach(food => {
+                if (storedLikes[food.id] !== undefined) {
+                    food.likes = storedLikes[food.id];
+                }
+            });
+        }
+
+        function saveLikes() {
+            let likes = {};
+            foods.forEach(food => {
+                likes[food.id] = food.likes;
+            });
+            localStorage.setItem("foodLikes", JSON.stringify(likes));
+        }
+
+        function renderFoods() {
+            let foodList = document.getElementById("foodList");
+            foodList.innerHTML = "";
+            foods.forEach(food => {
+                let foodItem = document.createElement("div");
+                foodItem.className = "food-item";
+                foodItem.innerHTML = `
+                    <img src="${food.image}" alt="${food.name}">
+                    <div style="flex: 1;">
+                        <h3>${food.name}</h3>
+                        <span>${food.likes} lượt thích</span>
+                    </div>
+                    <button onclick="likeFood(${food.id})">Thích +1</button>
+                `;
+                foodList.appendChild(foodItem);
+            });
+        }
+
+        function likeFood(id) {
+            const food = foods.find(f => f.id === id);
+            if (food) {
+                food.likes++;
+                saveLikes();
+                renderFoods();
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadLikes();
+            renderFoods();
+        });
+    </script>
+</body>
+</html>
